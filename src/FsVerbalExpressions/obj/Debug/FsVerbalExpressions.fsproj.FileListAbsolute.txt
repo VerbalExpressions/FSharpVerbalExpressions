@@ -1,0 +1,10 @@
+E:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.dll
+E:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.pdb
+E:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\obj\Debug\FsVerbalExpressions.dll
+E:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\obj\Debug\FsVerbalExpressions.pdb
+E:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.XML
+D:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.XML
+D:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.dll
+D:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\bin\Debug\FsVerbalExpressions.pdb
+D:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\obj\Debug\FsVerbalExpressions.dll
+D:\BitSync\GitRepos\FsVerbalExpressions\src\FsVerbalExpressions\obj\Debug\FsVerbalExpressions.pdb

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Microsoft</dc:creator><dc:description>Provides classes and attributes that allows basic interaction with a debugger.
+
+Commonly Used Types:
+System.Diagnostics.Debug
+System.Diagnostics.DebuggerStepThroughAttribute
+System.Diagnostics.Debugger
+System.Diagnostics.DebuggerDisplayAttribute
+System.Diagnostics.DebuggerBrowsableAttribute
+System.Diagnostics.DebuggerBrowsableState
+System.Diagnostics.DebuggerHiddenAttribute
+System.Diagnostics.DebuggerNonUserCodeAttribute
+System.Diagnostics.DebuggerTypeProxyAttribute</dc:description><dc:identifier>System.Diagnostics.Debug</dc:identifier><version>4.0.10</version><keywords /><dc:title>System.Diagnostics.Debug</dc:title><lastModifiedBy>NuGet, Version=2.8.60610.85, Culture=neutral, PublicKeyToken=null;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.5</lastModifiedBy></coreProperties>

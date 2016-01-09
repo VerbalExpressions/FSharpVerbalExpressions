@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SourceLink.Fake</id>
+    <version>1.1.0</version>
+    <authors>Cameron Taggart</authors>
+    <owners>Cameron Taggart</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://ctaggart.github.io/SourceLink/</projectUrl>
+    <iconUrl>http://ctaggart.github.io/SourceLink/SourceLink128.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>source linking .NET pdb files with FAKE - F# Make</description>
+  </metadata>
+</package>

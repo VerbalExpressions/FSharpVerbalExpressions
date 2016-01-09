@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FsVerbalExpressions</name></assembly>
+<members>
+<member name="P:FsVerbalExpressions.VerbalExpression.VerbEx.RightToLeft">
+<summary>
+Indicates whether the regular expression searches from right to left.
+</summary>
+</member>
+<member name="P:FsVerbalExpressions.VerbalExpression.VerbEx.RegexOptions">
+<summary>
+Enumerated values to use to set regular expression options.
+</summary>
+</member>
+<member name="P:FsVerbalExpressions.VerbalExpression.VerbEx.MatchTimeout">
+<summary>
+Gets the time-out interval of the current instance.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Split(System.String,System.Int32,System.Int32)">
+<summary>
+Splits input string, begining at start position, a specified maximum number of times into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Split(System.String,System.Int32)">
+<summary>
+Splits input string a specified maximum number of times into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Split(System.String)">
+<summary>
+Splits input string into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32,System.Int32)">
+<summary>
+In input string beginning at start at position replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.String,System.Int32,System.Int32)">
+<summary>
+In input string beginning at start at position replaces a specified maximum number of strings that match regular expression with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32)">
+<summary>
+In input string replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.String,System.Int32)">
+<summary>
+In input string replaces a specified maximum number of strings that match regular expression with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator)">
+<summary>
+In input string replaces all strings that match regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Replace(System.String,System.String)">
+<summary>
+In input string replaces all strings that match regular expression pattern with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Matches(System.String,System.Int32)">
+<summary>
+Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Matches(System.String)">
+<summary>
+Searches the specified input string for all occurrences of a regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Match(System.String,System.Int32,System.Int32)">
+<summary>
+Searches the specified input string for the first occurrence of the regular expression beginning at the starting position for the length.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Match(System.String,System.Int32)">
+<summary>
+Searches the specified input string for the first occurrence of the regular expression beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Match(System.String)">
+<summary>
+Searches the specified input string for the first occurrence of the regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.IsMatch(System.String,System.Int32)">
+<summary>
+Indicates whether the regular expression finds a match in the input string beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.IsMatch(System.String)">
+<summary>
+Indicates whether the regular expression finds a match in the input string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.GroupNumbers">
+<summary>
+Returns an array of capturing group numbers that correspond to group names in an array.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.GroupNumberFromName(System.String)">
+<summary>
+Returns the group number that corresponds to the specified group name.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.GroupNames">
+<summary>
+Returns an array of capturing group names for the regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.GroupNameFromNumber(System.Int32)">
+<summary>
+Gets the group name that corresponds to the specified group number.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.VerbEx.Capture(System.String,System.String)">
+<summary>
+Match and select groupname value.
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.VerbEx">
+<summary>
+Composable immutable wrapping type for .Net Regex.
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSpecials">
+<summary>
+FFF0 - FFFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHalfwidthandFullwidthForms">
+<summary>
+FF00 - FFEF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsArabicPresentationForms_B">
+<summary>
+FE70 - FEFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSmallFormVariants">
+<summary>
+FE50 - FE6F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKCompatibilityForms">
+<summary>
+FE30 - FE4F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCombiningHalfMarks">
+<summary>
+FE20 - FE2F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsVariationSelectors">
+<summary>
+FE00 - FE0F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsArabicPresentationForms_A">
+<summary>
+FB50 - FDFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsAlphabeticPresentationForms">
+<summary>
+FB00 - FB4F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKCompatibilityIdeographs">
+<summary>
+F900 - FAFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsPrivateUse">
+<summary>
+E000 - F8FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLowSurrogates">
+<summary>
+DC00 - DFFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHighPrivateUseSurrogates">
+<summary>
+DB80 - DBFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHighSurrogates">
+<summary>
+D800 - DB7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHangulSyllables">
+<summary>
+AC00 - D7AF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsYiRadicals">
+<summary>
+A490 - A4CF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsYiSyllables">
+<summary>
+A000 - A48F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKUnifiedIdeographs">
+<summary>
+4E00 - 9FFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsYijingHexagramSymbols">
+<summary>
+4DC0 - 4DFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKUnifiedIdeographsExtensionA">
+<summary>
+3400 - 4DBF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKCompatibility">
+<summary>
+3300 - 33FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsEnclosedCJKLettersandMonths">
+<summary>
+3200 - 32FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKatakanaPhoneticExtensions">
+<summary>
+31F0 - 31FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBopomofoExtended">
+<summary>
+31A0 - 31BF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKanbun">
+<summary>
+3190 - 319F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHangulCompatibilityJamo">
+<summary>
+3130 - 318F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBopomofo">
+<summary>
+3100 - 312F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKatakana">
+<summary>
+30A0 - 30FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHiragana">
+<summary>
+3040 - 309F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKSymbolsandPunctuation">
+<summary>
+3000 - 303F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsIdeographicDescriptionCharacters">
+<summary>
+2FF0 - 2FFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKangxiRadicals">
+<summary>
+2F00 - 2FDF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCJKRadicalsSupplement">
+<summary>
+2E80 - 2EFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMiscellaneousSymbolsandArrows">
+<summary>
+2B00 - 2BFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSupplementalMathematicalOperators">
+<summary>
+2A00 - 2AFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMiscellaneousMathematicalSymbols_B">
+<summary>
+2980 - 29FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSupplementalArrows_B">
+<summary>
+2900 - 297F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBraillePatterns">
+<summary>
+2800 - 28FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSupplementalArrows_A">
+<summary>
+27F0 - 27FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMiscellaneousMathematicalSymbols_A">
+<summary>
+27C0 - 27EF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsDingbats">
+<summary>
+2700 - 27BF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMiscellaneousSymbols">
+<summary>
+2600 - 26FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGeometricShapes">
+<summary>
+25A0 - 25FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBlockElements">
+<summary>
+2580 - 259F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBoxDrawing">
+<summary>
+2500 - 257F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsEnclosedAlphanumerics">
+<summary>
+2460 - 24FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsOpticalCharacterRecognition">
+<summary>
+2440 - 245F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsControlPictures">
+<summary>
+2400 - 243F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMiscellaneousTechnical">
+<summary>
+2300 - 23FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMathematicalOperators">
+<summary>
+2200 - 22FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsArrows">
+<summary>
+2190 - 21FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsNumberForms">
+<summary>
+2150 - 218F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLetterlikeSymbols">
+<summary>
+2100 - 214F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCombiningMarksforSymbols">
+<summary>
+20D0 - 20FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCombiningDiacriticalMarksforSymbols">
+<summary>
+20D0 - 20FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCurrencySymbols">
+<summary>
+20A0 - 20CF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSuperscriptsandSubscripts">
+<summary>
+2070 - 209F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGeneralPunctuation">
+<summary>
+2000 - 206F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGreekExtended">
+<summary>
+1F00 - 1FFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLatinExtendedAdditional">
+<summary>
+1E00 - 1EFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsPhoneticExtensions">
+<summary>
+1D00 - 1D7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKhmerSymbols">
+<summary>
+19E0 - 19FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTaiLe">
+<summary>
+1950 - 197F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLimbu">
+<summary>
+1900 - 194F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMongolian">
+<summary>
+1800 - 18AF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKhmer">
+<summary>
+1780 - 17FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTagbanwa">
+<summary>
+1760 - 177F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBuhid">
+<summary>
+1740 - 175F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHanunoo">
+<summary>
+1720 - 173F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTagalog">
+<summary>
+1700 - 171F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsRunic">
+<summary>
+16A0 - 16FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsOgham">
+<summary>
+1680 - 169F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsUnifiedCanadianAboriginalSyllabics">
+<summary>
+1400 - 167F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCherokee">
+<summary>
+13A0 - 13FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsEthiopic">
+<summary>
+1200 - 137F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHangulJamo">
+<summary>
+1100 - 11FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGeorgian">
+<summary>
+10A0 - 10FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMyanmar">
+<summary>
+1000 - 109F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTibetan">
+<summary>
+0F00 - 0FFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLao">
+<summary>
+0E80 - 0EFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsThai">
+<summary>
+0E00 - 0E7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSinhala">
+<summary>
+0D80 - 0DFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsMalayalam">
+<summary>
+0D00 - 0D7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsKannada">
+<summary>
+0C80 - 0CFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTelugu">
+<summary>
+0C00 - 0C7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsTamil">
+<summary>
+0B80 - 0BFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsOriya">
+<summary>
+0B00 - 0B7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGujarati">
+<summary>
+0A80 - 0AFF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGurmukhi">
+<summary>
+0A00 - 0A7F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBengali">
+<summary>
+0980 - 09FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsDevanagari">
+<summary>
+0900 - 097F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsThaana">
+<summary>
+0780 - 07BF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSyriac">
+<summary>
+0700 - 074F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsArabic">
+<summary>
+0600 - 06FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsHebrew">
+<summary>
+0590 - 05FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsArmenian">
+<summary>
+0530 - 058F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCyrillicSupplement">
+<summary>
+0500 - 052F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCyrillic">
+<summary>
+0400 - 04FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGreekandCoptic">
+<summary>
+0370 - 03FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsGreek">
+<summary>
+0370 - 03FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsCombiningDiacriticalMarks">
+<summary>
+0300 - 036F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsSpacingModifierLetters">
+<summary>
+02B0 - 02FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsIPAExtensions">
+<summary>
+0250 - 02AF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLatinExtended_B">
+<summary>
+0180 - 024F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLatinExtended_A">
+<summary>
+0100 - 017F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsLatin_1Supplement">
+<summary>
+0080 - 00FF
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.SupportedNamedBlock.IsBasicLatin">
+<summary>
+0000 - 007F
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.ControlAll">
+<summary>
+All control characters. This includes the OtherControl, OtherFormat, OtherSurrogate, OtherPrivateUse, and OtherNotAssigned categories; C
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.OtherNotAssigned">
+<summary>
+Other, Not Assigned (no characters have this property); Cn
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.OtherPrivateUse">
+<summary>
+Other, Private Use; Co
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.OtherSurrogate">
+<summary>
+Other, Surrogate; Cs
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.OtherFormat">
+<summary>
+Other, Format; Cf
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.OtherControl">
+<summary>
+Other, Control; Cc
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.Separator">
+<summary>
+All separator characters. This includes the SeparatorSpace, SeparatorLine, and SeparatorLine categories; Z
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SeparatorParagraph">
+<summary>
+Separator, Paragraph; Zp
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SeparatorLine">
+<summary>
+Separator, Line; Zl
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SeparatorSpace">
+<summary>
+Separator, Space; Zs
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.Symbol">
+<summary>
+All symbols. This includes the SymbolMath, SymbolCurrency, SymbolModifier, and SymbolOther categories; S
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SymbolOther">
+<summary>
+Symbol, Other; So
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SymbolModifier">
+<summary>
+Symbol, Modifier; Sk
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SymbolCurrency">
+<summary>
+Symbol, Currency; Sc
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.SymbolMath">
+<summary>
+Symbol, Math; Sm
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.Punctuation">
+<summary>
+All punctuation characters. This includes the PunctuationConnector, PunctuationDash, PunctuationOpen, PunctuationClose, PunctuationInitial, PunctuationFinal, and PunctuationOther categories; P
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationOther">
+<summary>
+Punctuation, Other; Po
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationFinal">
+<summary>
+Punctuation, Final quote (may behave like Ps or Pe depending on usage); Pf
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationInitial">
+<summary>
+Punctuation, Initial quote (may behave like Ps or Pe depending on usage); Pi
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationClose">
+<summary>
+Punctuation, Close; Pe
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationOpen">
+<summary>
+Punctuation, Open; Ps
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationDash">
+<summary>
+Punctuation, Dash; Pd
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.PunctuationConnector">
+<summary>
+Punctuation, Connector; Pc
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.NumberALL">
+<summary>
+All numbers. This includes the Nd, Nl, and No categories; N
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.NumberOther">
+<summary>
+Number, Other; No
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.NumberLetter">
+<summary>
+Number, Letter; Nl
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.NumberDecimalDigit">
+<summary>
+Number, Decimal Digit; Nd
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.Mark">
+<summary>
+All diacritic marks. This includes the MarkNonspacing, MarkSpacingCombining, and MarkEnclosing categories; M
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.MarkEnclosing">
+<summary>
+Mark, Enclosing; Me
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.MarkSpacingCombining">
+<summary>
+Mark, Spacing Combining; Mc
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.MarkNonspacing">
+<summary>
+Mark, Nonspacing; Mn
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.Letter">
+<summary>
+All letter characters. This includes the LetterUppercase, LetterLowercase, LetterTitlecase, LetterModifier, and LetterOther characters; L
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.LetterOther">
+<summary>
+Letter, Other; Lo
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.LetterModifier">
+<summary>
+Letter, Modifier; Lm
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.LetterTitlecase">
+<summary>
+Letter, Titlecase; Lt
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.LetterLowercase">
+<summary>
+Letter, Lowercase; Ll
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory.LetterUppercase">
+<summary>
+Letter, Uppercase; Lu
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.notNamedBlock(FsVerbalExpressions.VerbalExpression.SupportedNamedBlock,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any single character that is not in the supported named block; \P{name}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.namedBlock(FsVerbalExpressions.VerbalExpression.SupportedNamedBlock,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any single character in the supported named block; \p{name}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.notUnicodeCategory(FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any single character that is not in the Unicode general category; \P{name}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.unicodeCategory(FsVerbalExpressions.VerbalExpression.UniCodeGeneralCategory,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any single character in the Unicode general category; \p{name}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.unicode(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches a Unicode character by using hexadecimal representation  (exactly four digits, as represented by nnnn); \unnnn
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.repeatBetweenPrevious(System.Int32,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Repeat previous number of times between n and m; {n,m}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.repeatPrevious(System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Repeat previous exact number of times; {n}
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.endCapture(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+End capture group; )
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.beginCaptureNamed(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Begin named capture group ;(?&lt;groupName&gt;
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.beginCapture(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Begin capture group; (
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.verbExOrVerbEx(System.Text.RegularExpressions.RegexOptions,FsVerbalExpressions.VerbalExpression.VerbEx,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Return new VerbEx of two VerbExs or&apos;ed.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.or'(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Or&apos;s the regular expression to the regular expression in a VerbEx.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.multiple(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+The escaped expression 1 or more times; (value)+
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.any(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Same as anyOf.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.anyOf(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any single character included in the specified set of escaped characters; [value]
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.nonDigit(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any nondigit; \D
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.digit(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any decimal digit; \d
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.nonWordCharacter(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any nonword character; \W
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.wordCharacter(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any word character; \w
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.word(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Expression to match a word; \w+
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.nonWhiteSpace(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any non-white-space character; \S.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.whiteSpace(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches any white-space character; \s
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.tab(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches a tab character; \t
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.br(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Same as lineBreak; \n
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.lineBreak(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Matches universal line break expression; \n
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.range(System.Collections.Generic.IEnumerable{System.Object},FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Add expression to match a range (or multiple ranges), unescaped values.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.namedBackReference(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Refers to named capturing group; \k&lt;groupname&gt;
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.backReference(System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Refers to nth occurence of capturing groups; \ordinal
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.somethingBut(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+One or more of any character except escaped character; ([^%s]+)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.something(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+One or more of any character; (.+)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.anythingBut(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Zero or more of any character except escaped character(s); ([^value]*)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.anything(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Zero or more of any character; (.*)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.maybe(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Add escaped string to the expression that might appear once (or not); (value)?
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.find(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Append escaped literal expression to the expression. (Same as then&apos;.)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.then'(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Append escaped literal expression to the expression. (Same as find.)
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.add(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Append unescaped literal expression to the expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.endOfLine(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Mark the expression to end at the last character of the line; $
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.startOfLine(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Mark the expression to start at the beginning of the line; ^
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.toString(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Value of regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.groupNumbers(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Returns an array of capturing group numbers that correspond to group names in an array.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.groupNames(FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Returns an array of capturing group names for the regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.isMatchAt(System.String,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Indicates whether the regular expression finds a match in the input string beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.isMatch(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Indicates whether the regular expression finds a match in the input string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.capture(System.String,System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Match and select groupname value.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.resetRegexOptions(Microsoft.FSharp.Core.FSharpOption{System.Text.RegularExpressions.RegexOptions},FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Return new VerbEx with new RegExOptions.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.SplitMaxTimesStartAt(System.String,System.Int32,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Splits input string, begining at start position, a specified maximum number of times into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.SplitMaxTimes(System.String,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Splits input string a specified maximum number of times into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.Split(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Splits input string into an array of substrings at the positions defined by regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.ReplaceByMatchMaxTimesStartAt(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string beginning at start at position replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.ReplaceMaxTimesStartAt(System.String,System.String,System.Int32,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string beginning at start at position replaces a specified maximum number of strings that match regular expression with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.ReplaceByMatchMaxTimes(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.ReplaceMaxTimes(System.String,System.String,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string replaces a specified maximum number of strings that match regular expression with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.ReplaceByMatch(System.String,System.Text.RegularExpressions.MatchEvaluator,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string replaces all strings that match regular expression with string returned by MatchEvaluator delegate.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.Replace(System.String,System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+In input string replaces all strings that match regular expression pattern with replacement string.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.matchesAt(System.String,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.matches(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Searches the specified input string for all occurrences of a regular expression.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.matchAtFor(System.String,System.Int32,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Searches the specified input string for the first occurrence of the VerbExbeginning at the starting position for the length.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.matchAt(System.String,System.Int32,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Searches the specified input string for the first occurrence of the VerbEx beginning at the specified starting position.
+</summary>
+</member>
+<member name="M:FsVerbalExpressions.VerbalExpression.match'(System.String,FsVerbalExpressions.VerbalExpression.VerbEx)">
+<summary>
+Searches the specified input string for the first occurrence of the VerbEx.
+</summary>
+</member>
+<member name="T:FsVerbalExpressions.VerbalExpression">
+<summary>
+Composable immutable wrapping type for .Net Regex.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FSharp.Formatting</id>
+    <version>2.13.0</version>
+    <authors>Tomas Petricek, Oleg Pestov, Anh-Dung Phan, Xiang Zhang, Matthias Dittrich</authors>
+    <owners>Tomas Petricek, Oleg Pestov, Anh-Dung Phan, Xiang Zhang, Matthias Dittrich</owners>
+    <licenseUrl>http://github.com/tpetricek/FSharp.Formatting/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://github.com/tpetricek/FSharp.Formatting</projectUrl>
+    <iconUrl>https://raw.github.com/tpetricek/FSharp.Formatting/master/docs/files/misc/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The package is a collection of libraries that can be used for literate programming with F# (great for building documentation) and for generating library documentation from inline code comments. The key componments are Markdown parser, tools for formatting F# code snippets, including tool tip type information and a tool for generating documentation from library metadata.</description>
+    <summary>A package of libraries for building great F# documentation, samples and blogs</summary>
+    <releaseNotes>- Be compatible with the common-mark spec for 'Fenced code blocks' and 'Indented code blocks'.
+See https://github.com/tpetricek/FSharp.Formatting/pull/343.
+Please follow-up by adding support for more sections of the spec!
+Just add the section to https://github.com/tpetricek/FSharp.Formatting/blob/master/tests/FSharp.Markdown.Tests/CommonMarkSpecTest.fs#L20
+and fix the newly enabled tests.
+- Add ComiledName to members with F# specific naming (https://github.com/tpetricek/FSharp.Formatting/pull/372)</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>F# fsharp formatting markdown code fssnip literate programming</tags>
+    <dependencies>
+      <dependency id="FSharpVSPowerTools.Core" version="[2.2.0, 2.3)" />
+      <dependency id="FSharp.Compiler.Service" version="[1.4.2.0, 1.5)" />
+    </dependencies>
+  </metadata>
+</package>

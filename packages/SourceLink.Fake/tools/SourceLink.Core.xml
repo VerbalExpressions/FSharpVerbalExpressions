@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>SourceLink.Core</name></assembly>
+<members>
+<member name="F:SourceLink.PdbFile.RawUrl@">
+<summary>
+ The raw URL to get the source code.
+ It becomes the SRVSRVTRG, the source server target.
+ {0} will be substituted with the revision.
+ %var2% will get evaluated to the file paths passed in.
+ https://raw.github.com/ctaggart/SourceLink/{0}/%var2%
+</summary>
+</member>
+<member name="P:SourceLink.PdbFile.RawUrl(Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+ The raw URL to get the source code.
+ It becomes the SRVSRVTRG, the source server target.
+ {0} will be substituted with the revision.
+ %var2% will get evaluated to the file paths passed in.
+ https://raw.github.com/ctaggart/SourceLink/{0}/%var2%
+</summary>
+</member>
+<member name="P:SourceLink.PdbFile.RawUrl">
+<summary>
+ The raw URL to get the source code.
+ It becomes the SRVSRVTRG, the source server target.
+ {0} will be substituted with the revision.
+ %var2% will get evaluated to the file paths passed in.
+ https://raw.github.com/ctaggart/SourceLink/{0}/%var2%
+</summary>
+</member>
+<member name="M:SourceLink.PdbFile.TrimEnd">
+<summary>
+ looks for the last used page and removes any free at the end
+</summary>
+</member>
+<member name="M:SourceLink.PdbFile.SaveInfo">
+<summary>
+ writes info stream, root stream, and header
+</summary>
+</member>
+<member name="M:SourceLink.PdbFile.FreeInfo">
+<summary>
+ frees info stream, root stream
+</summary>
+</member>
+<member name="M:SourceLink.PdbFile.Defrag">
+<summary>
+ reads all the streams into memory then writes them back in order, removes free pages
+</summary>
+</member>
+<member name="P:SourceLink.PdbRoot.Stream">
+<summary>
+ PdbStream used for reading the PdbRoot
+</summary>
+</member>
+<member name="M:SourceLink.AppConfigM.Configuration.get.Static(System.String)">
+<summary>
+ loads or creates the config file
+</summary>
+</member>
+<member name="M:SourceLink.Digraph.topSort``1(System.Collections.Generic.IEqualityComparer{``0},Microsoft.FSharp.Core.FSharpFunc{``0,System.Collections.Generic.IEnumerable{``0}},System.Collections.Generic.IEnumerable{``0})">
+<summary>
+ topological sort, depth-first search
+ pass in the nodes, a comparer for identity, and a function to get the referenced nodes
+</summary>
+</member>
+<member name="M:SourceLink.PdbChecksums.PdbFile.MatchChecksums(SourceLink.PdbFile,System.Collections.Generic.IEnumerable{System.String})">
+<summary>
+ Computes the checksums for the list of files passed in and verifies that the pdb contains them.
+ Returns a list of matched and unmatched files and their checksums.
+ Only matches when filenames match.
+</summary>
+</member>
+<member name="M:SourceLink.PdbChecksums.PdbFile.get_FileSet(SourceLink.PdbFile)">
+<summary>
+ A set of files and their checksums
+</summary>
+</member>
+<member name="M:SourceLink.PdbChecksums.PdbFile.get_Files(SourceLink.PdbFile)">
+<summary>
+ A sequence of files and their checksums
+</summary>
+</member>
+<member name="M:SourceLink.PdbFileCreateSrcSrv.PdbFile.CreateSrcSrvEscaped(SourceLink.PdbFile,System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}})">
+<summary>
+ create the SrcSrv with the paths escaped using Uri.EscapeDataString
+</summary>
+</member>
+<member name="M:SourceLink.PdbFileCreateSrcSrv.PdbFile.CreateSrcSrv(SourceLink.PdbFile,System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}})">
+<summary>
+ create the SrcSrv
+</summary>
+</member>
+<member name="M:SourceLink.SrcSrv.createEscaped(System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}})">
+<summary>
+ create the SrcSrv with the paths escaped using Uri.EscapeDataString
+</summary>
+</member>
+<member name="M:SourceLink.SrcSrv.createFormat(System.String,System.String,System.Collections.Generic.IEnumerable{System.Tuple{System.String,System.String}},Microsoft.FSharp.Core.FSharpFunc{System.String,System.String})">
+<summary>
+ creates the SrcSrv with callback for formatting the path
+ paths is the list of original file system paths and their repository paths
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.File.copyToNo.Static(System.String,System.String)">
+<summary>
+ copies a file to the directory, throws if already exists
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.File.copyTo.Static(System.String,System.String)">
+<summary>
+ copies a file to the directory, overwrites
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.File.copyNo.Static(System.String,System.String)">
+<summary>
+ file copy, throws if already exists
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.File.copy.Static(System.String,System.String)">
+<summary>
+ file copy, overwrite
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.Path.absolute.Static(System.String)">
+<summary>
+ gets the absolute path, no trailing slash if it is a directory
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.Directory.DeleteRec.Static(System.String)">
+<summary>
+ deletes a directory and its contents recursively, no exception if the directory does not exist
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.String.cmpi.Static(System.String,System.String)">
+<summary>
+ string comparison ignoring case, similar to strcmpi
+</summary>
+</member>
+<member name="M:SourceLink.SystemExtensions.String.cmp.Static(System.String,System.String)">
+<summary>
+ string comparison, similar to strcmp
+</summary>
+</member>
+<member name="M:SourceLink.VsBuild.Project.get_ItemsCompileLinkPath(Microsoft.Build.Evaluation.Project)">
+<summary>
+ full path for all items with a build action of compile that are linked
+</summary>
+</member>
+<member name="M:SourceLink.VsBuild.Project.get_ItemsCompilePath(Microsoft.Build.Evaluation.Project)">
+<summary>
+ full path for all items with a build action of compile 
+</summary>
+</member>
+<member name="M:SourceLink.VsBuild.Project.get_ItemsCompile(Microsoft.Build.Evaluation.Project)">
+<summary>
+ all items with a build action of compile
+</summary>
+</member>
+</members>
+</doc>
