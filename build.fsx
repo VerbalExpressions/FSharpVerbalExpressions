@@ -54,10 +54,10 @@ let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
 let gitOwner = "jackfoxy"
-let gitHome = "https://github.com/VerbalExpressions/FSharpVerbalExpressions" 
+let gitHome = "https://github.com/VerbalExpressions" 
 
 // The name of the project on GitHub
-let gitName = "FsVerbalExpressions"
+let gitName = "FSharpVerbalExpressions "
 
 // The url for the raw files hosted
 let gitRaw = environVarOrDefault "gitRaw" "https://raw.github.com/VerbalExpressions/FSharpVerbalExpressions"
