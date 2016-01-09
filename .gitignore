@@ -8,6 +8,8 @@ packages/
 # Generated documentation folder
 docs/output/
 
+docs/tools/*.svclog
+
 # Temp folder used for publishing docs
 temp/
 
