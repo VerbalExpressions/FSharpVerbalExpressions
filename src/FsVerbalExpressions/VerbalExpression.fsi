@@ -6,6 +6,7 @@ open System.Text.RegularExpressions
 ///Composable immutable wrapping type for .Net Regex.
 module VerbalExpression = 
 
+    ///Unicode defined the general categories 
     type UniCodeGeneralCategory =
         ///Letter, Uppercase; Lu
         | LetterUppercase
@@ -82,6 +83,7 @@ module VerbalExpression =
         ///All control characters. This includes the OtherControl, OtherFormat, OtherSurrogate, OtherPrivateUse, and OtherNotAssigned categories; C
         | ControlAll
 
+    ///.NET Framework named Unicode blocks 
     type SupportedNamedBlock =
         ///0000 - 007F
         | IsBasicLatin
