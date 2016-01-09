@@ -13,6 +13,7 @@ temp/
 
 paket.exe
 .paket/*.exe.config
+paket-files
 release.cmd 
 
 *.FSharpLint 
