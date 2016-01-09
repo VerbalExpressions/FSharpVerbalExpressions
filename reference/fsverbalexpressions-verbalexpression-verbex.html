@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>VerbEx - FsVerbalExpressions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Jack Fox"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/FsVerbalExpressions/content/style.css" />
+    <script type="text/javascript" src="/FsVerbalExpressions/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/FsVerbalExpressions/index.html">FsVerbalExpressions</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>VerbEx</h1>
+<p>
+  <span>Namespace: FsVerbalExpressions</span><br />
+  <span>Parent Module: <a href="fsverbalexpressions-verbalexpression.html">VerbalExpression</a></span>
+</p>
+<div class="xmldoc">
+<p>Composable immutable wrapping type for .Net Regex.</p>
+
+</div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '206', 206)" onmouseover="showTip(event, '206', 206)">
+            new()
+          </code>
+          <div class="tip" id="206">
+            <strong>Signature:</strong> unit -&gt; VerbEx<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L328-328" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '207', 207)" onmouseover="showTip(event, '207', 207)">
+            new(regexOptions)
+          </code>
+          <div class="tip" id="207">
+            <strong>Signature:</strong> regexOptions:RegexOptions -&gt; VerbEx<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L334-334" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '208', 208)" onmouseover="showTip(event, '208', 208)">
+            new(regularExpression)
+          </code>
+          <div class="tip" id="208">
+            <strong>Signature:</strong> regularExpression:string -&gt; VerbEx<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L331-331" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '209', 209)" onmouseover="showTip(event, '209', 209)">
+            new(regularExpression, regexOptions)
+          </code>
+          <div class="tip" id="209">
+            <strong>Signature:</strong> (regularExpression:string * regexOptions:RegexOptions) -&gt; VerbEx<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L305-305" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '210', 210)" onmouseover="showTip(event, '210', 210)">
+            Capture(input arg2)
+          </code>
+          <div class="tip" id="210">
+            <strong>Signature:</strong> input:string -&gt; string -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L346-346" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Match and select groupname value.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '211', 211)" onmouseover="showTip(event, '211', 211)">
+            GroupNameFromNumber(n)
+          </code>
+          <div class="tip" id="211">
+            <strong>Signature:</strong> n:int -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L363-363" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets the group name that corresponds to the specified group number.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '212', 212)" onmouseover="showTip(event, '212', 212)">
+            GroupNames()
+          </code>
+          <div class="tip" id="212">
+            <strong>Signature:</strong> unit -&gt; string array<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L366-366" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns an array of capturing group names for the regular expression.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '213', 213)" onmouseover="showTip(event, '213', 213)">
+            GroupNumberFromName(groupName)
+          </code>
+          <div class="tip" id="213">
+            <strong>Signature:</strong> groupName:string -&gt; int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L370-370" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns the group number that corresponds to the specified group name.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '214', 214)" onmouseover="showTip(event, '214', 214)">
+            GroupNumbers()
+          </code>
+          <div class="tip" id="214">
+            <strong>Signature:</strong> unit -&gt; int array<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L373-373" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns an array of capturing group numbers that correspond to group names in an array.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '215', 215)" onmouseover="showTip(event, '215', 215)">
+            IsMatch(input, startAt)
+          </code>
+          <div class="tip" id="215">
+            <strong>Signature:</strong> (input:string * startAt:int) -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L381-381" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Indicates whether the regular expression finds a match in the input string beginning at the specified starting position.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '216', 216)" onmouseover="showTip(event, '216', 216)">
+            IsMatch(input)
+          </code>
+          <div class="tip" id="216">
+            <strong>Signature:</strong> input:string -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L377-377" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Indicates whether the regular expression finds a match in the input string.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '217', 217)" onmouseover="showTip(event, '217', 217)">
+            Match(input, startAt, length)
+          </code>
+          <div class="tip" id="217">
+            <strong>Signature:</strong> (input:string * startAt:int * length:int) -&gt; Match<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L391-391" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Searches the specified input string for the first occurrence of the regular expression beginning at the starting position for the length.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '218', 218)" onmouseover="showTip(event, '218', 218)">
+            Match(input, startAt)
+          </code>
+          <div class="tip" id="218">
+            <strong>Signature:</strong> (input:string * startAt:int) -&gt; Match<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L388-388" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Searches the specified input string for the first occurrence of the regular expression beginning at the specified starting position.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '219', 219)" onmouseover="showTip(event, '219', 219)">
+            Match(input)
+          </code>
+          <div class="tip" id="219">
+            <strong>Signature:</strong> input:string -&gt; Match<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L385-385" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Searches the specified input string for the first occurrence of the regular expression.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '220', 220)" onmouseover="showTip(event, '220', 220)">
+            Matches(input, startAt)
+          </code>
+          <div class="tip" id="220">
+            <strong>Signature:</strong> (input:string * startAt:int) -&gt; MatchCollection<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L397-397" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '221', 221)" onmouseover="showTip(event, '221', 221)">
+            Matches(input)
+          </code>
+          <div class="tip" id="221">
+            <strong>Signature:</strong> input:string -&gt; MatchCollection<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L394-394" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Searches the specified input string for all occurrences of a regular expression.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '222', 222)" onmouseover="showTip(event, '222', 222)">
+            MatchTimeout
+          </code>
+          <div class="tip" id="222">
+            <strong>Signature:</strong> TimeSpan<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L400-400" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets the time-out interval of the current instance.</p>
+
+
+              <p>CompiledName: <code>get_MatchTimeout</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '223', 223)" onmouseover="showTip(event, '223', 223)">
+            RegexOptions
+          </code>
+          <div class="tip" id="223">
+            <strong>Signature:</strong> RegexOptions<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L408-408" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enumerated values to use to set regular expression options.</p>
+
+
+              <p>CompiledName: <code>get_RegexOptions</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '224', 224)" onmouseover="showTip(event, '224', 224)">
+            Replace(input, evalutor, count, startAt)
+          </code>
+          <div class="tip" id="224">
+            <strong>Signature:</strong> (input:string * evalutor:MatchEvaluator * count:int * startAt:int) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L425-425" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string beginning at start at position replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '225', 225)" onmouseover="showTip(event, '225', 225)">
+            Replace(...)
+          </code>
+          <div class="tip" id="225">
+            <strong>Signature:</strong> (input:string * replacement:string * count:int * startAt:int) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L422-422" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string beginning at start at position replaces a specified maximum number of strings that match regular expression with replacement string.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '226', 226)" onmouseover="showTip(event, '226', 226)">
+            Replace(input, evalutor, count)
+          </code>
+          <div class="tip" id="226">
+            <strong>Signature:</strong> (input:string * evalutor:MatchEvaluator * count:int) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L419-419" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string replaces a specified maximum number of strings that match a regular expression with string returned by MatchEvaluator delegate.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '227', 227)" onmouseover="showTip(event, '227', 227)">
+            Replace(input, replacement, count)
+          </code>
+          <div class="tip" id="227">
+            <strong>Signature:</strong> (input:string * replacement:string * count:int) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L416-416" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string replaces a specified maximum number of strings that match regular expression with replacement string.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '228', 228)" onmouseover="showTip(event, '228', 228)">
+            Replace(input, evalutor)
+          </code>
+          <div class="tip" id="228">
+            <strong>Signature:</strong> (input:string * evalutor:MatchEvaluator) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L413-413" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string replaces all strings that match regular expression with string returned by MatchEvaluator delegate.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '229', 229)" onmouseover="showTip(event, '229', 229)">
+            Replace(input, replacement)
+          </code>
+          <div class="tip" id="229">
+            <strong>Signature:</strong> (input:string * replacement:string) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L410-410" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>In input string replaces all strings that match regular expression pattern with replacement string.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '230', 230)" onmouseover="showTip(event, '230', 230)">
+            RightToLeft
+          </code>
+          <div class="tip" id="230">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L428-428" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Indicates whether the regular expression searches from right to left.</p>
+
+
+              <p>CompiledName: <code>get_RightToLeft</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '231', 231)" onmouseover="showTip(event, '231', 231)">
+            Split(input, count, startAt)
+          </code>
+          <div class="tip" id="231">
+            <strong>Signature:</strong> (input:string * count:int * startAt:int) -&gt; string array<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L447-447" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Splits input string, begining at start position, a specified maximum number of times into an array of substrings at the positions defined by regular expression.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '232', 232)" onmouseover="showTip(event, '232', 232)">
+            Split(input, count)
+          </code>
+          <div class="tip" id="232">
+            <strong>Signature:</strong> (input:string * count:int) -&gt; string array<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L444-444" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Splits input string a specified maximum number of times into an array of substrings at the positions defined by regular expression.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '233', 233)" onmouseover="showTip(event, '233', 233)">
+            Split(input)
+          </code>
+          <div class="tip" id="233">
+            <strong>Signature:</strong> input:string -&gt; string array<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/VerbalExpression.fs#L441-441" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Splits input string into an array of substrings at the positions defined by regular expression.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/FsVerbalExpressions/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">FsVerbalExpressions</li>
+            <li><a href="/FsVerbalExpressions/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/FsVerbalExpressions">Get Library via NuGet</a></li>
+            <li><a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions">Source Code on GitHub</a></li>
+            <li><a href="/FsVerbalExpressions/license.html">License</a></li>
+            <li><a href="/FsVerbalExpressions/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/FsVerbalExpressions/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/FsVerbalExpressions/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>
