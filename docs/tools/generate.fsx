@@ -11,13 +11,13 @@
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = ["FsVerbalExpressions.dll"]
 // Web site location for the generated documentation
-let website = "/FsVerbalExpressions"
+let website = "/FSharpVerbalExpressions"
 
 let githubLink = "http://github.com/VerbalExpressions/FSharpVerbalExpressions"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "FsVerbalExpressions"
+  [ "project-name", "FSharpVerbalExpressions"
     "project-author", "Jack Fox"
     "project-summary", "Composable Regular Expressions"
     "project-github", githubLink
