@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Microsoft</dc:creator><dc:description>Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
-
-Commonly Used Types:
-System.Linq.Enumerable
-System.Linq.IGrouping&lt;TKey, TElement&gt;
-System.Linq.IOrderedEnumerable&lt;TElement&gt;
-System.Linq.ILookup&lt;TKey, TElement&gt;
-System.Linq.Lookup&lt;TKey, TElement&gt;</dc:description><dc:identifier>System.Linq</dc:identifier><version>4.0.0</version><keywords /><dc:title>System.Linq</dc:title><lastModifiedBy>NuGet, Version=2.8.60610.85, Culture=neutral, PublicKeyToken=null;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.5</lastModifiedBy></coreProperties>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Microsoft</dc:creator><dc:description>Provides clases that allow a compiler or tool to emit Microsoft intermediate language (MSIL). The primary clients of these classes are script engines and compilers.
-
-Commonly Used Types:
-System.Reflection.Emit.ILGenerator
-System.Reflection.Emit.Label
-System.Reflection.Emit.CustomAttributeBuilder
-System.Reflection.Emit.LocalBuilder
-System.Reflection.Emit.ParameterBuilder
-System.Reflection.Emit.SignatureHelper</dc:description><dc:identifier>System.Reflection.Emit.ILGeneration</dc:identifier><version>4.0.0</version><keywords /><dc:title>System.Reflection.Emit.ILGeneration</dc:title><lastModifiedBy>NuGet, Version=2.8.60610.85, Culture=neutral, PublicKeyToken=null;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.5</lastModifiedBy></coreProperties>
