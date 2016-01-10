@@ -5,8 +5,8 @@
 
 This library wraps the .NET RegEx object in a composable F# type and allows you to write regular expressions in natural language. Lazy evaluation ensures composition imposes no performance penalty.
 
-Documentation: [FsVerbalExpressions](http://verbalexpressions.github.io/FSharpVerbalExpressions/)
-Nuget: [FsVerbalExpressions](https://www.nuget.org/packages/FsVerbalExpressions "FsVerbalExpressions")
+- Documentation: [FsVerbalExpressions](http://verbalexpressions.github.io/FSharpVerbalExpressions/)
+- Nuget: [FsVerbalExpressions](https://www.nuget.org/packages/FsVerbalExpressions "FsVerbalExpressions")
 
 For enhanced debugging and API documentation experience, FsVerbalExpressions proudly implements [SourceLink](http://ctaggart.github.io/SourceLink/ "SourceLink")
 
