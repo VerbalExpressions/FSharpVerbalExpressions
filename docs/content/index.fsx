@@ -76,8 +76,8 @@ VerbEx()
 // 123
 
 (**
-Samples & documentation
------------------------
+Documentation
+-------------
 
 FsVerbalExpressions comes with comprehensive API documentation and a tutorial. 
 

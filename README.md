@@ -1,5 +1,5 @@
-[![Issue Stats](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions/badge/issue)](http://issuestats.com/github/fsprojects/ProjectScaffold)
-[![Issue Stats](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions/badge/pr)](http://issuestats.com/github/fsprojects/ProjectScaffold)
+[![Issue Stats](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions/badge/issue)](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions)
+[![Issue Stats](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions/badge/pr)](http://issuestats.com/github/verbalexpressions/FsVerbalExpressions)
 
 # FsVerbalExpressions
 
