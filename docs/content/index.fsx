@@ -1,13 +1,13 @@
 (*** hide ***)
 // This block of code is omitted in the generated HTML documentation. Use 
 // it to define helpers that you do not want to show in the documentation.
-#I "../../bin"
+#I "../../bin/FsVerbalExpressions"
 
 (**
 FsVerbalExpressions
 ======================
 
-Documentation
+This library wraps the .NET RegEx object in a composable F# type and allows you to write regular expressions in natural language. Lazy evaluation ensures composition imposes no performance penalty.
 
 <div class="row">
   <div class="span1"></div>
@@ -20,42 +20,87 @@ Documentation
   <div class="span1"></div>
 </div>
 
-Example
--------
+Introduction
+------------
 
-This example demonstrates using a function defined in this sample library.
+The FsVerbalExpressions library brings a composable regular expression experience to F#.
 
 *)
 #r "FsVerbalExpressions.dll"
 open FsVerbalExpressions
+open System.Text.RegularExpressions
+open VerbalExpression
 
-printfn "hello = %i" <| Library.hello 0
+let allXs = new VerbEx("x+")
+
+let verbEx =
+    CommonVerbEx.Email
+    |> verbExOrVerbEx RegexOptions.None CommonVerbEx.Url
+    |> verbExOrVerbEx RegexOptions.None allXs
+
+let foundEmail =
+    verbEx
+    |> isMatch "test@github.com"
+
+let foundUrl =
+    verbEx
+    |> isMatch "http://www.google.com"
+
+let foundAllXs =
+    verbEx
+    |> isMatch "xxxxx"
+
+printfn "%b" foundEmail
+printfn "%b" foundUrl
+printfn "%b" foundAllXs
+
+// true
+// true
+// true
 
 (**
-Some more info
+It also provides the composable Verbal Expressions language for constructing simple regular expressions in a readable fashion.
+*)
+let groupName =  "GroupNumber"
+ 
+VerbEx()
+|> add "COD"
+|> beginCaptureNamed groupName
+|> any "0-9"
+|> repeatPrevious 3
+|> endCapture
+|> then' "END"
+|> capture "COD123END" groupName
+|> printfn "%s"
 
+// 123
+
+(**
 Samples & documentation
 -----------------------
 
-The library comes with comprehensible documentation. 
-It can include tutorials automatically generated from `*.fsx` files in [the content folder][content]. 
-The API reference is automatically generated from Markdown comments in the library implementation.
+FsVerbalExpressions comes with comprehensive API documentation and a tutorial. 
 
- * [Tutorial](tutorial.html) contains a further explanation of this sample library.
+ * [Tutorial](tutorial.html) contains further explanation of FsVerbalExpressions and many more usage examples.
 
- * [API Reference](reference/index.html) contains automatically generated documentation for all types, modules
-   and functions in the library. This includes additional brief samples on using most of the
-   functions.
+ * [API Reference](reference/index.html) contains documentation for all types, modules, and functions in the library. 
+
+Versioning
+-----------------------
+
+ FsVerbalExpressions adheres to [Semantic Versioning](http://semver.org/ "Semantic Versioning"). So long as the project is pre-1.0.0 minor versions may be breaking. Once the project reaches 1.0.0 minor enhancements will be backwards-compatible.
  
 Contributing and copyright
 --------------------------
 
-The project is hosted on [GitHub][gh] where you can [report issues][issues], fork 
-the project and submit pull requests. If you're adding a new public API, please also 
-consider adding [samples][content] that can be turned into a documentation. You might
-also want to read the [library design notes][readme] to understand how it works.
+FsVerbalExpressions is hosted on [GitHub][gh] where you can [report issues][issues], fork 
+the project, and submit pull requests, so long as pull requests:
 
-The library is available under Public Domain license, which allows modification and 
+ * include excellent unit test coverage 
+ * include correct intellisense documentation
+ * adhere to the concepts of composability and Verbal Expressions
+
+FsVerbalExpressions  is available under Public Domain license, which allows modification and 
 redistribution for both commercial and non-commercial purposes. For more information see the 
 [License file][license] in the GitHub repository. 
 

@@ -70,6 +70,7 @@
     <Compile Include="Something.fs" />
     <Compile Include="StartOfLine.fs" />
     <Compile Include="Then%27.fs" />
+    <Compile Include="Tutorial.fs" />
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>

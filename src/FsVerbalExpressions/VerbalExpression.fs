@@ -1,305 +1,8 @@
 namespace FsVerbalExpressions
 
-open System
 open System.Text.RegularExpressions
 
 module VerbalExpression = 
-
-    type UniCodeGeneralCategory =
-        | LetterUppercase
-        | LetterLowercase
-        | LetterTitlecase
-        | LetterModifier
-        | LetterOther
-        | Letter
-        | MarkNonspacing
-        | MarkSpacingCombining
-        | MarkEnclosing
-        | Mark
-        | NumberDecimalDigit
-        | NumberLetter
-        | NumberOther
-        | NumberALL
-        | PunctuationConnector
-        | PunctuationDash
-        | PunctuationOpen
-        | PunctuationClose
-        | PunctuationInitial
-        | PunctuationFinal
-        | PunctuationOther
-        | Punctuation
-        | SymbolMath
-        | SymbolCurrency
-        | SymbolModifier
-        | SymbolOther
-        | Symbol
-        | SeparatorSpace
-        | SeparatorLine
-        | SeparatorParagraph
-        | Separator
-        | OtherControl
-        | OtherFormat
-        | OtherSurrogate
-        | OtherPrivateUse
-        | OtherNotAssigned
-        | ControlAll
-        override __.ToString() =
-            match __ with
-            | LetterUppercase -> "Lu"
-            | LetterLowercase -> "Ll"
-            | LetterTitlecase -> "Lt"
-            | LetterModifier -> "Lm"
-            | LetterOther -> "Lo"
-            | Letter -> "L"
-            | MarkNonspacing -> "Mn"
-            | MarkSpacingCombining -> "Mc"
-            | MarkEnclosing -> "Me"
-            | Mark -> "M"
-            | NumberDecimalDigit -> "Nd"
-            | NumberLetter -> "Nl"
-            | NumberOther -> "No"
-            | NumberALL -> "N"
-            | PunctuationConnector -> "Pc"
-            | PunctuationDash -> "Pd"
-            | PunctuationOpen -> "Ps"
-            | PunctuationClose -> "Pe"
-            | PunctuationInitial -> "Pi"
-            | PunctuationFinal -> "Pf"
-            | PunctuationOther -> "Po"
-            | Punctuation -> "P"
-            | SymbolMath -> "Sm"
-            | SymbolCurrency -> "Sc"
-            | SymbolModifier -> "Sk"
-            | SymbolOther -> "So"
-            | Symbol -> "S"
-            | SeparatorSpace -> "Zs"
-            | SeparatorLine -> "Zl"
-            | SeparatorParagraph -> "Zp"
-            | Separator -> "Z"
-            | OtherControl -> "Cc"
-            | OtherFormat -> "Cf"
-            | OtherSurrogate -> "Cs"
-            | OtherPrivateUse -> "Co"
-            | OtherNotAssigned -> "Cn"
-            | ControlAll -> "C"
-
-    type SupportedNamedBlock =
-        | IsBasicLatin
-        | IsLatin_1Supplement
-        | IsLatinExtended_A
-        | IsLatinExtended_B
-        | IsIPAExtensions
-        | IsSpacingModifierLetters
-        | IsCombiningDiacriticalMarks
-        | IsGreek
-        | IsGreekandCoptic
-        | IsCyrillic
-        | IsCyrillicSupplement
-        | IsArmenian
-        | IsHebrew
-        | IsArabic
-        | IsSyriac
-        | IsThaana
-        | IsDevanagari
-        | IsBengali
-        | IsGurmukhi
-        | IsGujarati
-        | IsOriya
-        | IsTamil
-        | IsTelugu
-        | IsKannada
-        | IsMalayalam
-        | IsSinhala
-        | IsThai
-        | IsLao
-        | IsTibetan
-        | IsMyanmar
-        | IsGeorgian
-        | IsHangulJamo
-        | IsEthiopic
-        | IsCherokee
-        | IsUnifiedCanadianAboriginalSyllabics
-        | IsOgham
-        | IsRunic
-        | IsTagalog
-        | IsHanunoo
-        | IsBuhid
-        | IsTagbanwa
-        | IsKhmer
-        | IsMongolian
-        | IsLimbu
-        | IsTaiLe
-        | IsKhmerSymbols
-        | IsPhoneticExtensions
-        | IsLatinExtendedAdditional
-        | IsGreekExtended
-        | IsGeneralPunctuation
-        | IsSuperscriptsandSubscripts
-        | IsCurrencySymbols
-        | IsCombiningDiacriticalMarksforSymbols
-        | IsCombiningMarksforSymbols
-        | IsLetterlikeSymbols
-        | IsNumberForms
-        | IsArrows
-        | IsMathematicalOperators
-        | IsMiscellaneousTechnical
-        | IsControlPictures
-        | IsOpticalCharacterRecognition
-        | IsEnclosedAlphanumerics
-        | IsBoxDrawing
-        | IsBlockElements
-        | IsGeometricShapes
-        | IsMiscellaneousSymbols
-        | IsDingbats
-        | IsMiscellaneousMathematicalSymbols_A
-        | IsSupplementalArrows_A
-        | IsBraillePatterns
-        | IsSupplementalArrows_B
-        | IsMiscellaneousMathematicalSymbols_B
-        | IsSupplementalMathematicalOperators
-        | IsMiscellaneousSymbolsandArrows
-        | IsCJKRadicalsSupplement
-        | IsKangxiRadicals
-        | IsIdeographicDescriptionCharacters
-        | IsCJKSymbolsandPunctuation
-        | IsHiragana
-        | IsKatakana
-        | IsBopomofo
-        | IsHangulCompatibilityJamo
-        | IsKanbun
-        | IsBopomofoExtended
-        | IsKatakanaPhoneticExtensions
-        | IsEnclosedCJKLettersandMonths
-        | IsCJKCompatibility
-        | IsCJKUnifiedIdeographsExtensionA
-        | IsYijingHexagramSymbols
-        | IsCJKUnifiedIdeographs
-        | IsYiSyllables
-        | IsYiRadicals
-        | IsHangulSyllables
-        | IsHighSurrogates
-        | IsHighPrivateUseSurrogates
-        | IsLowSurrogates
-        | IsPrivateUse
-        | IsCJKCompatibilityIdeographs 
-        | IsAlphabeticPresentationForms 
-        | IsArabicPresentationForms_A 
-        | IsVariationSelectors 
-        | IsCombiningHalfMarks 
-        | IsCJKCompatibilityForms 
-        | IsSmallFormVariants 
-        | IsArabicPresentationForms_B 
-        | IsHalfwidthandFullwidthForms 
-        | IsSpecials
-        override __.ToString() =
-            match __ with
-            | IsBasicLatin -> "IsBasicLatin"
-            | IsLatin_1Supplement -> "IsLatin-1Supplement"
-            | IsLatinExtended_A -> "IsLatinExtended-A"
-            | IsLatinExtended_B -> "IsLatinExtended-B"
-            | IsIPAExtensions -> "IsIPAExtensions"
-            | IsSpacingModifierLetters -> "IsSpacingModifierLetters"
-            | IsCombiningDiacriticalMarks -> "IsCombiningDiacriticalMarks"
-            | IsGreek -> "IsGreek"
-            | IsGreekandCoptic -> "IsGreekandCoptic"
-            | IsCyrillic -> "IsCyrillic"
-            | IsCyrillicSupplement -> "IsCyrillicSupplement"
-            | IsArmenian -> "IsArmenian"
-            | IsHebrew -> "IsHebrew"
-            | IsArabic -> "IsArabic"
-            | IsSyriac -> "IsSyriac"
-            | IsThaana -> "IsThaana"
-            | IsDevanagari -> "IsDevanagari"
-            | IsBengali -> "IsBengali"
-            | IsGurmukhi -> "IsGurmukhi"
-            | IsGujarati -> "IsGujarati"
-            | IsOriya -> "IsOriya"
-            | IsTamil -> "IsTamil"
-            | IsTelugu -> "IsTelugu"
-            | IsKannada -> "IsKannada"
-            | IsMalayalam -> "IsMalayalam"
-            | IsSinhala -> "IsSinhala"
-            | IsThai -> "IsThai"
-            | IsLao -> "IsLao"
-            | IsTibetan -> "IsTibetan"
-            | IsMyanmar -> "IsMyanmar"
-            | IsGeorgian -> "IsGeorgian"
-            | IsHangulJamo -> "IsHangulJamo"
-            | IsEthiopic -> "IsEthiopic"
-            | IsCherokee -> "IsCherokee"
-            | IsUnifiedCanadianAboriginalSyllabics -> "IsUnifiedCanadianAboriginalSyllabics"
-            | IsOgham -> "IsOgham"
-            | IsRunic -> "IsRunic"
-            | IsTagalog -> "IsTagalog"
-            | IsHanunoo -> "IsHanunoo"
-            | IsBuhid -> "IsBuhid"
-            | IsTagbanwa -> "IsTagbanwa"
-            | IsKhmer -> "IsKhmer"
-            | IsMongolian -> "IsMongolian"
-            | IsLimbu -> "IsLimbu"
-            | IsTaiLe -> "IsTaiLe"
-            | IsKhmerSymbols -> "IsKhmerSymbols"
-            | IsPhoneticExtensions -> "IsPhoneticExtensions"
-            | IsLatinExtendedAdditional -> "IsLatinExtendedAdditional"
-            | IsGreekExtended -> "IsGreekExtended"
-            | IsGeneralPunctuation -> "IsGeneralPunctuation"
-            | IsSuperscriptsandSubscripts -> "IsSuperscriptsandSubscripts"
-            | IsCurrencySymbols -> "IsCurrencySymbols"
-            | IsCombiningDiacriticalMarksforSymbols -> "IsCombiningDiacriticalMarksforSymbols"
-            | IsCombiningMarksforSymbols -> "IsCombiningMarksforSymbols"
-            | IsLetterlikeSymbols -> "IsLetterlikeSymbols"
-            | IsNumberForms -> "IsNumberForms"
-            | IsArrows -> "IsArrows"
-            | IsMathematicalOperators -> "IsMathematicalOperators"
-            | IsMiscellaneousTechnical -> "IsMiscellaneousTechnical"
-            | IsControlPictures -> "IsControlPictures"
-            | IsOpticalCharacterRecognition -> "IsOpticalCharacterRecognition"
-            | IsEnclosedAlphanumerics -> "IsEnclosedAlphanumerics"
-            | IsBoxDrawing -> "IsBoxDrawing"
-            | IsBlockElements -> "IsBlockElements"
-            | IsGeometricShapes -> "IsGeometricShapes"
-            | IsMiscellaneousSymbols -> "IsMiscellaneousSymbols"
-            | IsDingbats -> "IsDingbats"
-            | IsMiscellaneousMathematicalSymbols_A -> "IsMiscellaneousMathematicalSymbols-A"
-            | IsSupplementalArrows_A -> "IsSupplementalArrows-A"
-            | IsBraillePatterns -> "IsBraillePatterns"
-            | IsSupplementalArrows_B -> "IsSupplementalArrows-B"
-            | IsMiscellaneousMathematicalSymbols_B -> "IsMiscellaneousMathematicalSymbols-B"
-            | IsSupplementalMathematicalOperators -> "IsSupplementalMathematicalOperators"
-            | IsMiscellaneousSymbolsandArrows -> "IsMiscellaneousSymbolsandArrows"
-            | IsCJKRadicalsSupplement -> "IsCJKRadicalsSupplement"
-            | IsKangxiRadicals -> "IsKangxiRadicals"
-            | IsIdeographicDescriptionCharacters -> "IsIdeographicDescriptionCharacters"
-            | IsCJKSymbolsandPunctuation -> "IsCJKSymbolsandPunctuation"
-            | IsHiragana -> "IsHiragana"
-            | IsKatakana -> "IsKatakana"
-            | IsBopomofo -> "IsBopomofo"
-            | IsHangulCompatibilityJamo -> "IsHangulCompatibilityJamo"
-            | IsKanbun -> "IsKanbun"
-            | IsBopomofoExtended -> "IsBopomofoExtended"
-            | IsKatakanaPhoneticExtensions -> "IsKatakanaPhoneticExtensions"
-            | IsEnclosedCJKLettersandMonths -> "IsEnclosedCJKLettersandMonths"
-            | IsCJKCompatibility -> "IsCJKCompatibility"
-            | IsCJKUnifiedIdeographsExtensionA -> "IsCJKUnifiedIdeographsExtensionA"
-            | IsYijingHexagramSymbols -> "IsYijingHexagramSymbols"
-            | IsCJKUnifiedIdeographs -> "IsCJKUnifiedIdeographs"
-            | IsYiSyllables -> "IsYiSyllables"
-            | IsYiRadicals -> "IsYiRadicals"
-            | IsHangulSyllables -> "IsHangulSyllables"
-            | IsHighSurrogates -> "IsHighSurrogates"
-            | IsHighPrivateUseSurrogates -> "IsHighPrivateUseSurrogates"
-            | IsLowSurrogates -> "IsLowSurrogates"
-            | IsPrivateUse -> "IsPrivateUse"
-            | IsCJKCompatibilityIdeographs  -> "IsCJKCompatibilityIdeographs "
-            | IsAlphabeticPresentationForms  -> "IsAlphabeticPresentationForms "
-            | IsArabicPresentationForms_A  -> "IsArabicPresentationForms-A "
-            | IsVariationSelectors  -> "IsVariationSelectors "
-            | IsCombiningHalfMarks  -> "IsCombiningHalfMarks "
-            | IsCJKCompatibilityForms  -> "IsCJKCompatibilityForms "
-            | IsSmallFormVariants  -> "IsSmallFormVariants "
-            | IsArabicPresentationForms_B  -> "IsArabicPresentationForms-B "
-            | IsHalfwidthandFullwidthForms  -> "IsHalfwidthandFullwidthForms "
-            | IsSpecials -> "IsSpecials"
 
     [<Class>]
     type VerbEx(regularExpression : string, regexOptions : RegexOptions) =
@@ -462,31 +165,31 @@ module VerbalExpression =
     let matchAtFor input startAt length (verbEx : VerbEx) = 
         verbEx.Match (input, startAt, length)
 
-    let Replace input (replacement : string) (verbEx : VerbEx) =
+    let replace input (replacement : string) (verbEx : VerbEx) =
         verbEx.Replace(input, replacement)
 
-    let ReplaceByMatch input (evalutor : MatchEvaluator) (verbEx : VerbEx) =
+    let replaceByMatch input (evalutor : MatchEvaluator) (verbEx : VerbEx) =
         verbEx.Replace(input, evalutor)
 
-    let ReplaceMaxTimes input (replacement : string) count (verbEx : VerbEx) =
+    let replaceMaxTimes input (replacement : string) count (verbEx : VerbEx) =
         verbEx.Replace(input, replacement, count )
 
-    let ReplaceByMatchMaxTimes input (evalutor : MatchEvaluator) count (verbEx : VerbEx) =
+    let replaceByMatchMaxTimes input (evalutor : MatchEvaluator) count (verbEx : VerbEx) =
         verbEx.Replace(input, evalutor, count)
 
-    let ReplaceMaxTimesStartAt input (replacement : string) count startAt (verbEx : VerbEx) =
+    let replaceMaxTimesStartAt input (replacement : string) count startAt (verbEx : VerbEx) =
         verbEx.Replace(input, replacement, count, startAt)
 
-    let ReplaceByMatchMaxTimesStartAt input (evalutor : MatchEvaluator) count startAt (verbEx : VerbEx) =
+    let replaceByMatchMaxTimesStartAt input (evalutor : MatchEvaluator) count startAt (verbEx : VerbEx) =
         verbEx.Replace(input, evalutor, count, startAt)
 
-    let Split input (verbEx : VerbEx) =
+    let split input (verbEx : VerbEx) =
         verbEx.Split input
 
-    let SplitMaxTimes input count (verbEx : VerbEx) =
+    let splitMaxTimes input count (verbEx : VerbEx) =
         verbEx.Split (input, count)
 
-    let SplitMaxTimesStartAt input count startAt (verbEx : VerbEx) =
+    let splitMaxTimesStartAt input count startAt (verbEx : VerbEx) =
         verbEx.Split (input, count, startAt)
 
     let resetRegexOptions regexOptions (verbEx : VerbEx) =
@@ -637,6 +340,11 @@ module VerbalExpression =
 
     let multiple value (verbEx : VerbEx) =
         Regex.Escape value
+        |> sprintf @"(%s)+"
+        |> internalAdd verbEx
+
+    let multipleVerbEx (sourceVerbEx : VerbEx) (verbEx : VerbEx) =
+        sourceVerbEx.ToString()
         |> sprintf @"(%s)+"
         |> internalAdd verbEx
 

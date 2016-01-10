@@ -45,6 +45,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UniCode.fs" />
     <Compile Include="VerbalExpression.fsi" />
     <Compile Include="VerbalExpression.fs" />
     <Compile Include="CommonVerbEx.fsi" />
