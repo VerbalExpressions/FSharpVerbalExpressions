@@ -30,6 +30,7 @@ FsVerbalExpressions adheres to [Semantic Versioning](http://semver.org/ "Semanti
 
 You can see an up to date list of all ports of Verbal Expressions on [VerbalExpressions](http://verbalexpressions.github.io).
 
+Giving credit where credit is due, the [CSharpVerbalExpressions](https://github.com/VerbalExpressions/CSharpVerbalExpressions "CSharpVerbalExpressions") was a great help in providing pre-made unit tests and inspiration for .NET specific functionality.
 
 ## Maintainer(s)
 
