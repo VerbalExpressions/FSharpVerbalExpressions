@@ -38,10 +38,11 @@ module VerbalExpression =
     [<Class>]
     ///Composable immutable wrapping type for .Net Regex.
     type VerbEx =
-        new : regularExpression : string * regexOptions : RegexOptions -> VerbEx
-        new : regularExpression : string -> VerbEx
-        new : regexOptions : RegexOptions -> VerbEx
         new : unit -> VerbEx
+        new : regexOptions : RegexOptions -> VerbEx
+        new : regularExpression : string -> VerbEx
+        new : regularExpression : string * regexOptions : RegexOptions -> VerbEx
+        new : regularExpression : string * regexOptions : RegexOptions * matchTimeout : TimeSpan -> VerbEx
 
         ///Match and select groupname value.
         member Capture : input : string -> string -> string

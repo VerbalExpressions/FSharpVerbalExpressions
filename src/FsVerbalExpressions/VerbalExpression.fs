@@ -1,6 +1,8 @@
 namespace FsVerbalExpressions
 
+open System
 open System.Text.RegularExpressions
+open System.Threading
 
 module VerbalExpression = 
 
@@ -50,8 +52,9 @@ module VerbalExpression =
             _match.Value
 
     [<Class>]
-    type VerbEx(regularExpression : string, regexOptions : RegexOptions) =
+    type VerbEx(regularExpression : string, regexOptions : RegexOptions, matchTimeout : TimeSpan) =
 
+        let mutable _matchTimeout = matchTimeout
         let mutable _regexOptions : RegexOptions = regexOptions
         let mutable _prefixes = ""
         let mutable _source = regularExpression
@@ -80,19 +83,22 @@ module VerbalExpression =
         override __.ToString() = _prefixes + _source + _suffixes
 
         new () =
-            VerbEx("", RegexOptions.None)
-
-        new (regularExpression : string) =
-            VerbEx(regularExpression, RegexOptions.None)
+            VerbEx("", RegexOptions.None, Timeout.InfiniteTimeSpan)
 
         new (regexOptions : RegexOptions) =
-            VerbEx("", regexOptions)
+            VerbEx("", regexOptions, Timeout.InfiniteTimeSpan)
+
+        new (regularExpression : string) =
+            VerbEx(regularExpression, RegexOptions.None, Timeout.InfiniteTimeSpan)
+
+        new (regularExpression : string, regexOptions : RegexOptions) =
+            VerbEx(regularExpression, regexOptions, Timeout.InfiniteTimeSpan)
 
         member __.Regex =
             match _regex with
             | Some x -> x
             | None ->
-                let regex = new Regex(__.ToString(), _regexOptions)
+                let regex = new Regex(__.ToString(), _regexOptions, _matchTimeout)
 
                 _regex <- Some regex
                 regex
