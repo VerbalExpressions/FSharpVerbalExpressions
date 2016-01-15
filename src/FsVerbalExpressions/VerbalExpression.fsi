@@ -7,6 +7,35 @@ open System.Text.RegularExpressions
 module VerbalExpression = 
 
     [<Class>]
+    ///Composable wrapping type for .Net Match.
+    type Match' =
+        new : Match -> Match'
+
+        ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
+        member Captures : unit -> Capture []
+
+        ///Returns array of groups matched by the regular expression.
+        member Groups : unit -> Group []
+
+        ///The position in the original string where the first character of the captured substring is found.
+        member Index : int
+
+        ///Returns the length of the captured substring.
+        member Length : int
+
+        ///The underlying .Net Match.
+        member Match : Match
+
+        ///Returns the expansion of the specified replacement pattern.
+        member Result : replacement : string ->  string
+
+        ///Returns a value indicating whether the match is successful.
+        member Success : bool
+
+        ///Returns the captured substring from the input string.
+        member Value : string
+
+    [<Class>]
     ///Composable immutable wrapping type for .Net Regex.
     type VerbEx =
         new : regularExpression : string * regexOptions : RegexOptions -> VerbEx
@@ -45,10 +74,10 @@ module VerbalExpression =
         member Match : input : string * startAt : int * length : int -> Match
 
         ///Searches the specified input string for all occurrences of a regular expression.
-        member Matches : input : string -> MatchCollection
+        member Matches : input : string -> Match'[]
 
         ///Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
-        member Matches : input : string * startAt : int -> MatchCollection
+        member Matches : input : string * startAt : int -> Match'[]
 
         ///Gets the time-out interval of the current instance.
         member MatchTimeout : TimeSpan
@@ -96,10 +125,10 @@ module VerbalExpression =
     val matchAtFor : input : string -> startAt : int ->  length : int -> verbEx : VerbEx -> Match
 
     ///Searches the specified input string for all occurrences of a regular expression.
-    val matches : input : string -> verbEx : VerbEx -> MatchCollection
+    val matches : input : string -> verbEx : VerbEx -> Match'[]
 
     ///Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
-    val matchesAt : input : string -> startAt : int -> verbEx : VerbEx -> MatchCollection
+    val matchesAt : input : string -> startAt : int -> verbEx : VerbEx -> Match'[]
 
     ///In input string replaces all strings that match regular expression pattern with replacement string.
     val replace : input : string -> replacement : string -> verbEx : VerbEx -> string

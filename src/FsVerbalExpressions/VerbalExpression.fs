@@ -5,6 +5,51 @@ open System.Text.RegularExpressions
 module VerbalExpression = 
 
     [<Class>]
+    ///Composable wrapping type for .Net Match.
+    type Match'(match' : Match) =
+        let _match = match'
+
+        override __.Equals(yobj) = 
+
+            match yobj with
+
+            | :? Match' as y -> (_match = y.Match)
+
+            | _ -> false
+
+        override __.GetHashCode() = _match.GetHashCode()
+
+        override __.ToString() = _match.ToString()
+
+        member __.Captures() =
+            let a : Capture[] = Array.zeroCreate _match.Length 
+            _match.Captures.CopyTo(a, 0)
+            a
+
+        member __.Groups() =
+            let a : Group[] = Array.zeroCreate _match.Length 
+            _match.Groups.CopyTo(a, 0)
+            a
+
+        member __.Index =
+            _match.Index
+
+        member __.Length =
+            _match.Length
+
+        member __.Match =
+            _match
+
+        member __.Result replacement =
+            _match.Result replacement
+
+        member __.Success =
+            _match.Success
+
+        member __.Value =
+            _match.Value
+
+    [<Class>]
     type VerbEx(regularExpression : string, regexOptions : RegexOptions) =
 
         let mutable _regexOptions : RegexOptions = regexOptions
@@ -13,20 +58,26 @@ module VerbalExpression =
         let mutable _suffixes = ""
         let mutable _regex : Regex option = None
 
-        override __.ToString() = _prefixes + _source + _suffixes
+        let arrayFromMatches (c : MatchCollection) =
+            let a : Match[] = Array.zeroCreate c.Count
+            c.CopyTo(a, 0)
+            a
+            |> Array.map (fun t -> new Match'(t))
+
+        override __.Equals(yobj) = 
+
+            match yobj with
+
+            | :? VerbEx as y -> (__.GetHashCode() = y.GetHashCode())
+
+            | _ -> false
 
         override __.GetHashCode() = 
 
            _regexOptions.GetHashCode().ToString() + __.ToString()
            |> hash
 
-        override x.Equals(yobj) = 
-
-            match yobj with
-
-            | :? VerbEx as y -> (x.GetHashCode() = y.GetHashCode())
-
-            | _ -> false
+        override __.ToString() = _prefixes + _source + _suffixes
 
         new () =
             VerbEx("", RegexOptions.None)
@@ -96,9 +147,11 @@ module VerbalExpression =
 
         member __.Matches input =
             __.Regex.Matches input
+            |> arrayFromMatches
 
         member __.Matches (input, startAt) =
             __.Regex.Matches(input, startAt)
+            |> arrayFromMatches
 
         member __.MatchTimeout =
             __.Regex.MatchTimeout

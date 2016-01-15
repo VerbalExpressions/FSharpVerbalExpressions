@@ -14,5 +14,5 @@ module Match =
             |> word
             |> matches "three words here"
 
-        n.Count
+        n.Length
         |> should equal 3
