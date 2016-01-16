@@ -94,3 +94,55 @@ module Capture =
         let x = v |> capture "trellis llama webbing dresser swagger" groupName
 
         x |> should equal "l"
+
+    [<Fact>]
+    let ``Match' has 1 capture`` () =
+
+        let n =
+            VerbEx()
+            |> word
+            |> matches "three words here"
+
+        n.[0].Captures().Length
+        |> should equal 1
+
+    [<Fact>]
+    let ``Match' has 1 group`` () =
+
+        let n =
+            VerbEx()
+            |> word
+            |> matches "three words here"
+
+        n.[0].Groups().Length
+        |> should equal 1
+
+    [<Fact>]
+    let ``Group' captures`` () =
+
+        let testString = "This is a sentence. This is another sentence."
+
+        let v =
+            VerbEx()
+            |> add @"\b"
+            |> beginCapture
+            |> word
+            |> whiteSpace
+            |> add "*"
+            |> endCapture
+            |> add @"+\."
+
+        let m =
+            v
+            |> matches testString
+
+        let g =
+            m.[0].Groups().[1]
+
+        let testStringBegins = 
+            ("", g.Captures())
+            ||> Array.fold (fun s t ->
+                if s.Length = 0 then t.Value
+                else (s + t.Value)) 
+
+        testString.StartsWith(testStringBegins) |> should equal true

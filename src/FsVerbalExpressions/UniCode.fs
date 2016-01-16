@@ -121,11 +121,11 @@ type SupportedNamedBlock =
     ///0000 - 007F
     | IsBasicLatin
     ///0080 - 00FF
-    | IsLatin_1Supplement
+    | IsLatin1Supplement
     ///0100 - 017F
-    | IsLatinExtended_A
+    | IsLatinExtendedA
     ///0180 - 024F
-    | IsLatinExtended_B
+    | IsLatinExtendedB
     ///0250 - 02AF
     | IsIPAExtensions
     ///02B0 - 02FF
@@ -253,15 +253,15 @@ type SupportedNamedBlock =
     ///2700 - 27BF
     | IsDingbats
     ///27C0 - 27EF
-    | IsMiscellaneousMathematicalSymbols_A
+    | IsMiscellaneousMathematicalSymbolsA
     ///27F0 - 27FF
-    | IsSupplementalArrows_A
+    | IsSupplementalArrowsA
     ///2800 - 28FF
     | IsBraillePatterns
     ///2900 - 297F
-    | IsSupplementalArrows_B
+    | IsSupplementalArrowsB
     ///2980 - 29FF
-    | IsMiscellaneousMathematicalSymbols_B
+    | IsMiscellaneousMathematicalSymbolsB
     ///2A00 - 2AFF
     | IsSupplementalMathematicalOperators
     ///2B00 - 2BFF
@@ -317,7 +317,7 @@ type SupportedNamedBlock =
     ///FB00 - FB4F
     | IsAlphabeticPresentationForms 
     ///FB50 - FDFF
-    | IsArabicPresentationForms_A 
+    | IsArabicPresentationFormsA 
     ///FE00 - FE0F
     | IsVariationSelectors 
     ///FE20 - FE2F
@@ -327,7 +327,7 @@ type SupportedNamedBlock =
     ///FE50 - FE6F
     | IsSmallFormVariants 
     ///FE70 - FEFF
-    | IsArabicPresentationForms_B 
+    | IsArabicPresentationFormsB 
     ///FF00 - FFEF
     | IsHalfwidthandFullwidthForms 
     ///FFF0 - FFFF
@@ -335,9 +335,9 @@ type SupportedNamedBlock =
     override __.ToString() =
         match __ with
         | IsBasicLatin -> "IsBasicLatin"
-        | IsLatin_1Supplement -> "IsLatin-1Supplement"
-        | IsLatinExtended_A -> "IsLatinExtended-A"
-        | IsLatinExtended_B -> "IsLatinExtended-B"
+        | IsLatin1Supplement -> "IsLatin-1Supplement"
+        | IsLatinExtendedA -> "IsLatinExtended-A"
+        | IsLatinExtendedB -> "IsLatinExtended-B"
         | IsIPAExtensions -> "IsIPAExtensions"
         | IsSpacingModifierLetters -> "IsSpacingModifierLetters"
         | IsCombiningDiacriticalMarks -> "IsCombiningDiacriticalMarks"
@@ -401,11 +401,11 @@ type SupportedNamedBlock =
         | IsGeometricShapes -> "IsGeometricShapes"
         | IsMiscellaneousSymbols -> "IsMiscellaneousSymbols"
         | IsDingbats -> "IsDingbats"
-        | IsMiscellaneousMathematicalSymbols_A -> "IsMiscellaneousMathematicalSymbols-A"
-        | IsSupplementalArrows_A -> "IsSupplementalArrows-A"
+        | IsMiscellaneousMathematicalSymbolsA -> "IsMiscellaneousMathematicalSymbols-A"
+        | IsSupplementalArrowsA -> "IsSupplementalArrows-A"
         | IsBraillePatterns -> "IsBraillePatterns"
-        | IsSupplementalArrows_B -> "IsSupplementalArrows-B"
-        | IsMiscellaneousMathematicalSymbols_B -> "IsMiscellaneousMathematicalSymbols-B"
+        | IsSupplementalArrowsB -> "IsSupplementalArrows-B"
+        | IsMiscellaneousMathematicalSymbolsB -> "IsMiscellaneousMathematicalSymbols-B"
         | IsSupplementalMathematicalOperators -> "IsSupplementalMathematicalOperators"
         | IsMiscellaneousSymbolsandArrows -> "IsMiscellaneousSymbolsandArrows"
         | IsCJKRadicalsSupplement -> "IsCJKRadicalsSupplement"
@@ -433,12 +433,12 @@ type SupportedNamedBlock =
         | IsPrivateUse -> "IsPrivateUse"
         | IsCJKCompatibilityIdeographs  -> "IsCJKCompatibilityIdeographs "
         | IsAlphabeticPresentationForms  -> "IsAlphabeticPresentationForms "
-        | IsArabicPresentationForms_A  -> "IsArabicPresentationForms-A "
+        | IsArabicPresentationFormsA  -> "IsArabicPresentationForms-A "
         | IsVariationSelectors  -> "IsVariationSelectors "
         | IsCombiningHalfMarks  -> "IsCombiningHalfMarks "
         | IsCJKCompatibilityForms  -> "IsCJKCompatibilityForms "
         | IsSmallFormVariants  -> "IsSmallFormVariants "
-        | IsArabicPresentationForms_B  -> "IsArabicPresentationForms-B "
+        | IsArabicPresentationFormsB  -> "IsArabicPresentationForms-B "
         | IsHalfwidthandFullwidthForms  -> "IsHalfwidthandFullwidthForms "
         | IsSpecials -> "IsSpecials"
     

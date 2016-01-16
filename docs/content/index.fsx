@@ -25,6 +25,17 @@ Introduction
 
 The FsVerbalExpressions library brings a composable regular expression experience to F#.
 
+ * `VerbEx` - A composable F# wrapper type over `System.Text.RegularExpressions.Regex`.
+
+ * Basic functional operations on VerbEx (exists, fold, foldBack, iter, and map), among other composable functions.
+
+ * `Match'` - A composable F# wrapper type over `System.Text.RegularExpressions.Match`.
+
+ * `Group'` - A composable F# wrapper type over `System.Text.RegularExpressions.Group`.
+
+The RegEx speciall collections are returned as arrays. This does lose the advantange of lazy match evaluation the special collections provide. 
+A future release may include matches returned as a lazy list. The underlying object can always be returned from the wrapper
+
 *)
 #r "FsVerbalExpressions.dll"
 open FsVerbalExpressions
@@ -59,7 +70,7 @@ printfn "%b" foundAllXs
 // true
 
 (**
-It also provides the composable Verbal Expressions language for constructing simple regular expressions in a readable fashion.
+The library also provides the composable Verbal Expressions language for constructing simple regular expressions in a readable fashion.
 *)
 let groupName =  "GroupNumber"
  
@@ -84,6 +95,8 @@ FsVerbalExpressions comes with comprehensive API documentation and a tutorial.
  * [Tutorial](tutorial.html) contains further explanation of FsVerbalExpressions and many more usage examples.
 
  * [API Reference](reference/index.html) contains documentation for all types, modules, and functions in the library. 
+
+ * For enhanced debugging and API documentation experience, FsVerbalExpressions implements [SourceLink](http://ctaggart.github.io/SourceLink/ "SourceLink")
 
 Versioning
 -----------------------

@@ -3,19 +3,19 @@
 open System
 open System.Text.RegularExpressions
 
-///Composable immutable wrapping type for .Net Regex.
+///Composable immutable wrapping types and functions for .Net Regex.
 module VerbalExpression = 
 
     [<Class>]
-    ///Composable wrapping type for .Net Match.
-    type Match' =
-        new : Match -> Match'
+    ///Composable wrapping type for System.Text.RegularExpressions.Group.
+    type Group' =
+        new : Group -> Group'
 
         ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
         member Captures : unit -> Capture []
 
-        ///Returns array of groups matched by the regular expression.
-        member Groups : unit -> Group []
+        ///The underlying System.Text.RegularExpressions.Group.
+        member Group : Group
 
         ///The position in the original string where the first character of the captured substring is found.
         member Index : int
@@ -23,7 +23,30 @@ module VerbalExpression =
         ///Returns the length of the captured substring.
         member Length : int
 
-        ///The underlying .Net Match.
+        ///Returns a value indicating whether the match is successful.
+        member Success : bool
+
+        ///Returns the captured substring from the input string.
+        member Value : string
+
+    [<Class>]
+    ///Composable wrapping type for System.Text.RegularExpressions.Match.
+    type Match' =
+        new : Match -> Match'
+
+        ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
+        member Captures : unit -> Capture []
+
+        ///Returns array of groups matched by the regular expression.
+        member Groups : unit -> Group' []
+
+        ///The position in the original string where the first character of the captured substring is found.
+        member Index : int
+
+        ///Returns the length of the captured substring.
+        member Length : int
+
+        ///The underlying System.Text.RegularExpressions.Match.
         member Match : Match
 
         ///Returns the expansion of the specified replacement pattern.
@@ -36,7 +59,7 @@ module VerbalExpression =
         member Value : string
 
     [<Class>]
-    ///Composable immutable wrapping type for .Net Regex.
+    ///Composable immutable wrapping type for System.Text.RegularExpressions.Regex.
     type VerbEx =
         new : unit -> VerbEx
         new : regexOptions : RegexOptions -> VerbEx
@@ -82,6 +105,9 @@ module VerbalExpression =
 
         ///Gets the time-out interval of the current instance.
         member MatchTimeout : TimeSpan
+
+        ///The underlying System.Text.RegularExpressions.Regex
+        member Regex : Regex
 
         ///Enumerated values to use to set regular expression options.
         member RegexOptions : RegexOptions
@@ -295,3 +321,18 @@ module VerbalExpression =
 
     ///Matches any single character that is not in the supported named block; \P{name}
     val notNamedBlock : name : SupportedNamedBlock -> VerbEx -> VerbEx
+
+    ///Executes a function on a VerbEx.
+    val iter : f : (VerbEx -> unit) -> verbEx : VerbEx -> unit
+
+    ///Transforms a Verbex with a mapping function
+    val map : f : (VerbEx -> VerbEx) -> verbEx : VerbEx -> VerbEx
+
+    ///Applies a function to a VerbEx and a state returning a state
+    val fold : f : ('State -> VerbEx -> 'State) -> state : 'State -> verbEx : VerbEx -> 'State
+
+    ///Applies a function to a VerbEx and a state returning a state
+    val foldBack : f : (VerbEx -> 'State -> 'State) -> verbEx : VerbEx -> state : 'State -> 'State
+
+    ///Evaluates the boolean function on the VerbEx
+    val exists : f : (VerbEx -> bool) -> verbEx : VerbEx -> bool

@@ -16,3 +16,14 @@ module Match =
 
         n.Length
         |> should equal 3
+
+    [<Fact>]
+    let ``No Matches returned`` () =
+
+        let n =
+            VerbEx()
+            |> word
+            |> matches "$#% )(*! {}"
+
+        n.Length
+        |> should equal 0

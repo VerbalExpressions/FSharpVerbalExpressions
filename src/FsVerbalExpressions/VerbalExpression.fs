@@ -7,49 +7,81 @@ open System.Threading
 module VerbalExpression = 
 
     [<Class>]
-    ///Composable wrapping type for .Net Match.
-    type Match'(match' : Match) =
-        let _match = match'
+    type Group'(group : Group) =
 
         override __.Equals(yobj) = 
 
             match yobj with
 
-            | :? Match' as y -> (_match = y.Match)
+            | :? Group' as y -> (group = y.Group)
 
             | _ -> false
 
-        override __.GetHashCode() = _match.GetHashCode()
+        override __.GetHashCode() = group.GetHashCode()
 
-        override __.ToString() = _match.ToString()
+        override __.ToString() = group.ToString()
 
         member __.Captures() =
-            let a : Capture[] = Array.zeroCreate _match.Length 
-            _match.Captures.CopyTo(a, 0)
+            let a : Capture[] = Array.zeroCreate group.Captures.Count 
+            group.Captures.CopyTo(a, 0)
+            a
+
+        member __.Group = group
+
+        member __.Index =
+            group.Index
+
+        member __.Length =
+            group.Length
+
+        member __.Success =
+            group.Success
+
+        member __.Value =
+            group.Value
+
+    [<Class>]
+    type Match'(match' : Match) =
+
+        override __.Equals(yobj) = 
+
+            match yobj with
+
+            | :? Match' as y -> (match' = y.Match)
+
+            | _ -> false
+
+        override __.GetHashCode() = match'.GetHashCode()
+
+        override __.ToString() = match'.ToString()
+
+        member __.Captures() =
+            let a : Capture[] = Array.zeroCreate match'.Captures.Count 
+            match'.Captures.CopyTo(a, 0)
             a
 
         member __.Groups() =
-            let a : Group[] = Array.zeroCreate _match.Length 
-            _match.Groups.CopyTo(a, 0)
+            let a : Group[] = Array.zeroCreate match'.Groups.Count 
+            match'.Groups.CopyTo(a, 0)
             a
+            |> Array.map (fun t -> Group'(t)) 
 
         member __.Index =
-            _match.Index
+            match'.Index
 
         member __.Length =
-            _match.Length
+            match'.Length
 
-        member __.Match =
-            _match
+        member __.Match = match'
 
         member __.Result replacement =
-            _match.Result replacement
+            match'.Result replacement
 
         member __.Success =
-            _match.Success
+            match'.Success
 
         member __.Value =
-            _match.Value
+            match'.Value
 
     [<Class>]
     type VerbEx(regularExpression : string, regexOptions : RegexOptions, matchTimeout : TimeSpan) =
@@ -479,3 +511,13 @@ module VerbalExpression =
         name.ToString()
         |> sprintf "\P{%s}" 
         |> internalAdd verbEx
+
+    let iter (f : (VerbEx -> unit)) verbEx = f verbEx
+
+    let map (f : (VerbEx -> VerbEx)) verbEx = f verbEx
+
+    let fold (f : ('State -> VerbEx -> 'State)) state verbEx = f state verbEx
+
+    let foldBack (f : (VerbEx -> 'State -> 'State)) verbEx state = f verbEx state
+
+    let exists (f : (VerbEx -> bool)) verbEx = f verbEx
