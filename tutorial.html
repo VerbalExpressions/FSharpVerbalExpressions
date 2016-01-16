@@ -211,31 +211,31 @@
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs30', 56)" onmouseover="showTip(event, 'fs30', 56)" class="f">word</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs31', 57)" onmouseover="showTip(event, 'fs31', 57)" class="f">matches</span> <span class="s">&quot;three words here&quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 58)" onmouseover="showTip(event, 'fs16', 58)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs29', 59)" onmouseover="showTip(event, 'fs29', 59)" class="i">n</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs32', 60)" onmouseover="showTip(event, 'fs32', 60)" class="i">Count</span>
+<span onmouseout="hideTip(event, 'fs16', 58)" onmouseover="showTip(event, 'fs16', 58)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs29', 59)" onmouseover="showTip(event, 'fs29', 59)" class="i">n</span><span class="o">.</span><span class="i">Count</span>
 
 <span class="c">// 3</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs33', 61)" onmouseover="showTip(event, 'fs33', 61)" class="i">betterFormat</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 62)" onmouseover="showTip(event, 'fs18', 62)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 63)" onmouseover="showTip(event, 'fs27', 63)" class="f">add</span> <span class="s">&quot;\s+&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs34', 64)" onmouseover="showTip(event, 'fs34', 64)" class="f">or&#39;</span> <span class="s">&quot;whitespace&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs35', 65)" onmouseover="showTip(event, 'fs35', 65)" class="f">replace</span> <span class="s">&quot;This     is   text with   far  too   much   whitespace&quot;</span> <span class="s">&quot; &quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs32', 60)" onmouseover="showTip(event, 'fs32', 60)" class="i">betterFormat</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs18', 61)" onmouseover="showTip(event, 'fs18', 61)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 62)" onmouseover="showTip(event, 'fs27', 62)" class="f">add</span> <span class="s">&quot;\s+&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs33', 63)" onmouseover="showTip(event, 'fs33', 63)" class="f">or&#39;</span> <span class="s">&quot;whitespace&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs34', 64)" onmouseover="showTip(event, 'fs34', 64)" class="f">replace</span> <span class="s">&quot;This     is   text with   far  too   much   whitespace&quot;</span> <span class="s">&quot; &quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 66)" onmouseover="showTip(event, 'fs16', 66)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs33', 67)" onmouseover="showTip(event, 'fs33', 67)" class="i">betterFormat</span>
+<span onmouseout="hideTip(event, 'fs16', 65)" onmouseover="showTip(event, 'fs16', 65)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs32', 66)" onmouseover="showTip(event, 'fs32', 66)" class="i">betterFormat</span>
 
 <span class="c">// This is text with far too much  </span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs36', 68)" onmouseover="showTip(event, 'fs36', 68)" class="i">groupName</span> <span class="o">=</span>  <span class="s">&quot;GroupNumber&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs35', 67)" onmouseover="showTip(event, 'fs35', 67)" class="i">groupName</span> <span class="o">=</span>  <span class="s">&quot;GroupNumber&quot;</span>
  
-<span onmouseout="hideTip(event, 'fs18', 69)" onmouseover="showTip(event, 'fs18', 69)" class="t">VerbEx</span>()
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 70)" onmouseover="showTip(event, 'fs27', 70)" class="f">add</span> <span class="s">&quot;COD&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs37', 71)" onmouseover="showTip(event, 'fs37', 71)" class="f">beginCaptureNamed</span> <span onmouseout="hideTip(event, 'fs36', 72)" onmouseover="showTip(event, 'fs36', 72)" class="i">groupName</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 73)" onmouseover="showTip(event, 'fs38', 73)" class="f">any</span> <span class="s">&quot;0-9&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 74)" onmouseover="showTip(event, 'fs39', 74)" class="f">repeatPrevious</span> <span class="n">3</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 75)" onmouseover="showTip(event, 'fs40', 75)" class="f">endCapture</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 76)" onmouseover="showTip(event, 'fs21', 76)" class="f">then&#39;</span> <span class="s">&quot;END&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs41', 77)" onmouseover="showTip(event, 'fs41', 77)" class="f">capture</span> <span class="s">&quot;COD123END&quot;</span> <span onmouseout="hideTip(event, 'fs36', 78)" onmouseover="showTip(event, 'fs36', 78)" class="i">groupName</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 79)" onmouseover="showTip(event, 'fs16', 79)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
+<span onmouseout="hideTip(event, 'fs18', 68)" onmouseover="showTip(event, 'fs18', 68)" class="t">VerbEx</span>()
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 69)" onmouseover="showTip(event, 'fs27', 69)" class="f">add</span> <span class="s">&quot;COD&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 70)" onmouseover="showTip(event, 'fs36', 70)" class="f">beginCaptureNamed</span> <span onmouseout="hideTip(event, 'fs35', 71)" onmouseover="showTip(event, 'fs35', 71)" class="i">groupName</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs37', 72)" onmouseover="showTip(event, 'fs37', 72)" class="f">any</span> <span class="s">&quot;0-9&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 73)" onmouseover="showTip(event, 'fs38', 73)" class="f">repeatPrevious</span> <span class="n">3</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 74)" onmouseover="showTip(event, 'fs39', 74)" class="f">endCapture</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 75)" onmouseover="showTip(event, 'fs21', 75)" class="f">then&#39;</span> <span class="s">&quot;END&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 76)" onmouseover="showTip(event, 'fs40', 76)" class="f">capture</span> <span class="s">&quot;COD123END&quot;</span> <span onmouseout="hideTip(event, 'fs35', 77)" onmouseover="showTip(event, 'fs35', 77)" class="i">groupName</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 78)" onmouseover="showTip(event, 'fs16', 78)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
 
 <span class="c">// 123</span>
 </code></pre></td>
@@ -252,13 +252,13 @@
 <span class="l">8: </span>
 <span class="l">9: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs18', 80)" onmouseover="showTip(event, 'fs18', 80)" class="t">VerbEx</span>()
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs37', 81)" onmouseover="showTip(event, 'fs37', 81)" class="f">beginCaptureNamed</span> <span class="s">&quot;upper&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs42', 82)" onmouseover="showTip(event, 'fs42', 82)" class="f">unicodeCategory</span> <span onmouseout="hideTip(event, 'fs43', 83)" onmouseover="showTip(event, 'fs43', 83)" class="t">UniCodeGeneralCategory</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs44', 84)" onmouseover="showTip(event, 'fs44', 84)" class="p">LetterUppercase</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 85)" onmouseover="showTip(event, 'fs27', 85)" class="f">add</span> <span class="s">&quot;+&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 86)" onmouseover="showTip(event, 'fs40', 86)" class="f">endCapture</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs41', 87)" onmouseover="showTip(event, 'fs41', 87)" class="f">capture</span> <span class="s">&quot;some mixed case WORDS&quot;</span> <span class="s">&quot;upper&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 88)" onmouseover="showTip(event, 'fs16', 88)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs18', 79)" onmouseover="showTip(event, 'fs18', 79)" class="t">VerbEx</span>()
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 80)" onmouseover="showTip(event, 'fs36', 80)" class="f">beginCaptureNamed</span> <span class="s">&quot;upper&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs41', 81)" onmouseover="showTip(event, 'fs41', 81)" class="f">unicodeCategory</span> <span onmouseout="hideTip(event, 'fs42', 82)" onmouseover="showTip(event, 'fs42', 82)" class="t">UniCodeGeneralCategory</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 83)" onmouseover="showTip(event, 'fs43', 83)" class="p">LetterUppercase</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 84)" onmouseover="showTip(event, 'fs27', 84)" class="f">add</span> <span class="s">&quot;+&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 85)" onmouseover="showTip(event, 'fs39', 85)" class="f">endCapture</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 86)" onmouseover="showTip(event, 'fs40', 86)" class="f">capture</span> <span class="s">&quot;some mixed case WORDS&quot;</span> <span class="s">&quot;upper&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 87)" onmouseover="showTip(event, 'fs16', 87)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
 
 <span class="c">// WORDS</span>
 </code></pre></td>
@@ -282,7 +282,7 @@
 <div class="tip" id="fs15">val foundUrl : bool<br /><br />Full name: Tutorial.foundUrl</div>
 <div class="tip" id="fs16">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
 <div class="tip" id="fs17">val foundFromGithub : bool<br /><br />Full name: Tutorial.foundFromGithub</div>
-<div class="tip" id="fs18">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;member IsMatch : input:string -&gt; bool<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx</div>
+<div class="tip" id="fs18">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
 <div class="tip" id="fs19">val startOfLine : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.startOfLine</div>
 <div class="tip" id="fs20">val something : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.something</div>
 <div class="tip" id="fs21">val then&#39; : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.then&#39;</div>
@@ -293,22 +293,21 @@
 <div class="tip" id="fs26">val foundSpecialInMultiline : bool<br /><br />Full name: Tutorial.foundSpecialInMultiline</div>
 <div class="tip" id="fs27">val add : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.add</div>
 <div class="tip" id="fs28">val verbEx : VerbEx<br /><br />Full name: Tutorial.verbEx</div>
-<div class="tip" id="fs29">val n : MatchCollection<br /><br />Full name: Tutorial.n</div>
+<div class="tip" id="fs29">val n : Match&#39; []<br /><br />Full name: Tutorial.n</div>
 <div class="tip" id="fs30">val word : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.word</div>
-<div class="tip" id="fs31">val matches : input:string -&gt; verbEx:VerbEx -&gt; MatchCollection<br /><br />Full name: FsVerbalExpressions.VerbalExpression.matches</div>
-<div class="tip" id="fs32">property MatchCollection.Count: int</div>
-<div class="tip" id="fs33">val betterFormat : string<br /><br />Full name: Tutorial.betterFormat</div>
-<div class="tip" id="fs34">val or&#39; : regularExpression:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.or&#39;</div>
-<div class="tip" id="fs35">val replace : input:string -&gt; replacement:string -&gt; verbEx:VerbEx -&gt; string<br /><br />Full name: FsVerbalExpressions.VerbalExpression.replace</div>
-<div class="tip" id="fs36">val groupName : string<br /><br />Full name: Tutorial.groupName</div>
-<div class="tip" id="fs37">val beginCaptureNamed : groupName:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.beginCaptureNamed</div>
-<div class="tip" id="fs38">val any : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.any</div>
-<div class="tip" id="fs39">val repeatPrevious : n:int -&gt; VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.repeatPrevious</div>
-<div class="tip" id="fs40">val endCapture : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.endCapture</div>
-<div class="tip" id="fs41">val capture : input:string -&gt; groupName:string -&gt; verbEx:VerbEx -&gt; string<br /><br />Full name: FsVerbalExpressions.VerbalExpression.capture</div>
-<div class="tip" id="fs42">val unicodeCategory : category:UniCodeGeneralCategory -&gt; VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.unicodeCategory</div>
-<div class="tip" id="fs43">type UniCodeGeneralCategory =<br />&#160;&#160;| LetterUppercase<br />&#160;&#160;| LetterLowercase<br />&#160;&#160;| LetterTitlecase<br />&#160;&#160;| LetterModifier<br />&#160;&#160;| LetterOther<br />&#160;&#160;| Letter<br />&#160;&#160;| MarkNonspacing<br />&#160;&#160;| MarkSpacingCombining<br />&#160;&#160;| MarkEnclosing<br />&#160;&#160;| Mark<br />&#160;&#160;...<br />&#160;&#160;override ToString : unit -&gt; string<br /><br />Full name: FsVerbalExpressions.UniCodeGeneralCategory</div>
-<div class="tip" id="fs44">union case UniCodeGeneralCategory.LetterUppercase: UniCodeGeneralCategory</div>
+<div class="tip" id="fs31">val matches : input:string -&gt; verbEx:VerbEx -&gt; Match&#39; []<br /><br />Full name: FsVerbalExpressions.VerbalExpression.matches</div>
+<div class="tip" id="fs32">val betterFormat : string<br /><br />Full name: Tutorial.betterFormat</div>
+<div class="tip" id="fs33">val or&#39; : regularExpression:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.or&#39;</div>
+<div class="tip" id="fs34">val replace : input:string -&gt; replacement:string -&gt; verbEx:VerbEx -&gt; string<br /><br />Full name: FsVerbalExpressions.VerbalExpression.replace</div>
+<div class="tip" id="fs35">val groupName : string<br /><br />Full name: Tutorial.groupName</div>
+<div class="tip" id="fs36">val beginCaptureNamed : groupName:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.beginCaptureNamed</div>
+<div class="tip" id="fs37">val any : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.any</div>
+<div class="tip" id="fs38">val repeatPrevious : n:int -&gt; VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.repeatPrevious</div>
+<div class="tip" id="fs39">val endCapture : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.endCapture</div>
+<div class="tip" id="fs40">val capture : input:string -&gt; groupName:string -&gt; verbEx:VerbEx -&gt; string<br /><br />Full name: FsVerbalExpressions.VerbalExpression.capture</div>
+<div class="tip" id="fs41">val unicodeCategory : category:UniCodeGeneralCategory -&gt; VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.unicodeCategory</div>
+<div class="tip" id="fs42">type UniCodeGeneralCategory =<br />&#160;&#160;| LetterUppercase<br />&#160;&#160;| LetterLowercase<br />&#160;&#160;| LetterTitlecase<br />&#160;&#160;| LetterModifier<br />&#160;&#160;| LetterOther<br />&#160;&#160;| Letter<br />&#160;&#160;| MarkNonspacing<br />&#160;&#160;| MarkSpacingCombining<br />&#160;&#160;| MarkEnclosing<br />&#160;&#160;| Mark<br />&#160;&#160;...<br />&#160;&#160;override ToString : unit -&gt; string<br /><br />Full name: FsVerbalExpressions.UniCodeGeneralCategory</div>
+<div class="tip" id="fs43">union case UniCodeGeneralCategory.LetterUppercase: UniCodeGeneralCategory</div>
 
         </div>
         <div class="span3">

@@ -47,6 +47,14 @@
 </div>
 <h2><a name="Introduction" class="anchor" href="#Introduction">Introduction</a></h2>
 <p>The FsVerbalExpressions library brings a composable regular expression experience to F#.</p>
+<ul>
+<li><p><code>VerbEx</code> - A composable F# wrapper type over <code>System.Text.RegularExpressions.Regex</code>.</p></li>
+<li>Basic functional operations on VerbEx (exists, fold, foldBack, iter, and map), among other composable functions.</li>
+<li><p><code>Match'</code> - A composable F# wrapper type over <code>System.Text.RegularExpressions.Match</code>.</p></li>
+<li><p><code>Group'</code> - A composable F# wrapper type over <code>System.Text.RegularExpressions.Group</code>.</p></li>
+</ul>
+<p>The RegEx speciall collections are returned as arrays. This does lose the advantange of lazy match evaluation the special collections provide.
+A future release may include matches returned as a lazy list. The underlying object can always be returned from the wrapper</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -113,7 +121,7 @@
 </code></pre></td>
 </tr>
 </table>
-<p>It also provides the composable Verbal Expressions language for constructing simple regular expressions in a readable fashion.</p>
+<p>The library also provides the composable Verbal Expressions language for constructing simple regular expressions in a readable fashion.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -149,6 +157,7 @@
 <ul>
 <li><p><a href="tutorial.html">Tutorial</a> contains further explanation of FsVerbalExpressions and many more usage examples.</p></li>
 <li><p><a href="reference/index.html">API Reference</a> contains documentation for all types, modules, and functions in the library.</p></li>
+<li><p>For enhanced debugging and API documentation experience, FsVerbalExpressions implements <a href="http://ctaggart.github.io/SourceLink/" title="SourceLink">SourceLink</a></p></li>
 </ul>
 <h2><a name="Versioning" class="anchor" href="#Versioning">Versioning</a></h2>
 <p>FsVerbalExpressions adheres to <a href="http://semver.org/" title="Semantic Versioning">Semantic Versioning</a>. So long as the project is pre-1.0.0 minor versions may be breaking. Once the project reaches 1.0.0 minor enhancements will be backwards-compatible.</p>
@@ -170,7 +179,7 @@ redistribution for both commercial and non-commercial purposes. For more informa
 <div class="tip" id="fs4">namespace System.Text.RegularExpressions</div>
 <div class="tip" id="fs5">module VerbalExpression<br /><br />from FsVerbalExpressions</div>
 <div class="tip" id="fs6">val allXs : VerbEx<br /><br />Full name: Index.allXs</div>
-<div class="tip" id="fs7">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;member IsMatch : input:string -&gt; bool<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx</div>
+<div class="tip" id="fs7">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
 <div class="tip" id="fs8">val verbEx : VerbEx<br /><br />Full name: Index.verbEx</div>
 <div class="tip" id="fs9">module CommonVerbEx<br /><br />from FsVerbalExpressions</div>
 <div class="tip" id="fs10">val Email : VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Email</div>
