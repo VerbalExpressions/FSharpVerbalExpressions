@@ -9,6 +9,8 @@ module VerbalExpression =
     [<Class>]
     type Group'(group : Group) =
 
+        let mutable _captures : Capture [] option = None
+
         override __.Equals(yobj) = 
 
             match yobj with
@@ -22,9 +24,14 @@ module VerbalExpression =
         override __.ToString() = group.ToString()
 
         member __.Captures() =
-            let a : Capture[] = Array.zeroCreate group.Captures.Count 
-            group.Captures.CopyTo(a, 0)
-            a
+
+            match _captures with
+            | Some x -> x
+            | None ->
+                let a : Capture[] = Array.zeroCreate group.Captures.Count 
+                group.Captures.CopyTo(a, 0)
+                _captures <- Some a
+                a
 
         member __.Group = group
 
@@ -43,6 +50,9 @@ module VerbalExpression =
     [<Class>]
     type Match'(match' : Match) =
 
+        let mutable _captures : Capture [] option = None
+        let mutable _group's : Group' [] option = None
+
         override __.Equals(yobj) = 
 
             match yobj with
@@ -56,15 +66,27 @@ module VerbalExpression =
         override __.ToString() = match'.ToString()
 
         member __.Captures() =
-            let a : Capture[] = Array.zeroCreate match'.Captures.Count 
-            match'.Captures.CopyTo(a, 0)
-            a
+
+            match _captures with
+            | Some x -> x
+            | None ->
+                let a : Capture[] = Array.zeroCreate match'.Captures.Count 
+                match'.Captures.CopyTo(a, 0)
+                _captures <- Some a
+                a
 
         member __.Groups() =
-            let a : Group[] = Array.zeroCreate match'.Groups.Count 
-            match'.Groups.CopyTo(a, 0)
-            a
-            |> Array.map (fun t -> Group'(t)) 
+
+            match _group's with
+            | Some x -> x
+            | None ->
+                let gs =
+                    let a : Group[] = Array.zeroCreate match'.Groups.Count 
+                    match'.Groups.CopyTo(a, 0)
+                    a
+                    |> Array.map (fun t -> Group'(t)) 
+                _group's <- Some gs
+                gs
 
         member __.Index =
             match'.Index
@@ -92,6 +114,7 @@ module VerbalExpression =
         let mutable _source = regularExpression
         let mutable _suffixes = ""
         let mutable _regex : Regex option = None
+        let mutable _matches' : Match' [] option = None
 
         let arrayFromMatches (c : MatchCollection) =
             let a : Match[] = Array.zeroCreate c.Count
@@ -184,8 +207,15 @@ module VerbalExpression =
             __.Regex.Match(input, startAt, length)
 
         member __.Matches input =
-            __.Regex.Matches input
-            |> arrayFromMatches
+
+            match _matches' with
+            | Some x -> x
+            | None ->
+                let ms =
+                    __.Regex.Matches input
+                    |> arrayFromMatches
+                _matches' <- Some ms
+                ms
 
         member __.Matches (input, startAt) =
             __.Regex.Matches(input, startAt)

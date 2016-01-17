@@ -1,3 +1,6 @@
+#### 0.3.1 - January 17, 2016
+* internals
+
 #### 0.3.0 - January 16, 2016
 * breaking change
 * VerbEx now fully composable
