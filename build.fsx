@@ -355,7 +355,8 @@ Target "Release" (fun _ ->
     Branches.pushTag "" remote release.NugetVersion
 
     // release on github
-    createClient user pw
+    //createClient user pw
+    createClientWithToken user
     |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     // TODO: |> uploadFile "PATH_TO_FILE"
     |> releaseDraft
