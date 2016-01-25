@@ -87,6 +87,47 @@ VerbEx()
 // 123
 
 (**
+A comparison of using Regex natively, and Verbex to retrieve the database parameter from a connection string:
+*)
+
+let TestConnString = 
+    """<add name="MyConnString" connectionString="Server=tcp:172.1.1.1,54998;Database=MyDatabase;User ID=me;Password=secret;Encrypt=True;TrustServerCertificate=True;Enlist=False;" />"""
+
+let databaseFromRegex connectionString =
+        
+    Regex.Match(connectionString, "[dD]atabase=(?<database>.*?);").Groups.["database"].Value
+
+let databaseFromVerbEx connectionString =
+
+    VerbEx()
+    |> add "[dD]atabase=(?<database>.*?);"
+    |> capture connectionString "database"
+
+(databaseFromRegex TestConnString) = (databaseFromVerbEx TestConnString) 
+|> printfn "%b"
+
+// true
+
+(**
+This example shows the more verbose and desctriptive Verbal Expressions:
+*)
+let databaseFromVerboseVerbEx connectionString =
+
+    VerbEx()
+    |> anyOf "dD"
+    |> then' "atabase="
+    |> beginCaptureNamed "database"
+    |> add ".*?"
+    |> endCapture
+    |> then' ";"
+    |> capture connectionString "database"
+
+(databaseFromRegex TestConnString) = (databaseFromVerboseVerbEx TestConnString) 
+|> printfn "%b"
+
+// true
+
+(**
 Documentation
 -------------
 
