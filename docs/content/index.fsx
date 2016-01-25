@@ -91,7 +91,7 @@ A comparison of using Regex natively, and Verbex to retrieve the database parame
 *)
 
 let TestConnString = 
-    """<add name="MyConnString" connectionString="Server=tcp:172.1.1.1,54998;Database=MyDatabase;User ID=me;Password=secret;Encrypt=True;TrustServerCertificate=True;Enlist=False;" />"""
+    """<add name="MyConnString" connectionString="Server=MyServer;Database=MyDatabase;User ID=me;Password=secret;Encrypt=True;TrustServerCertificate=True;Enlist=False;" />"""
 
 let databaseFromRegex connectionString =
         
@@ -111,6 +111,7 @@ let databaseFromVerbEx connectionString =
 (**
 This example shows the more verbose and desctriptive Verbal Expressions:
 *)
+
 let databaseFromVerboseVerbEx connectionString =
 
     VerbEx()
