@@ -18,7 +18,27 @@ module Or' =
 
         v
         |> toString
-        |> should equal "(com)|(org)"
+        |> should equal "com|org"
+
+        v
+        |> isMatch "org"
+        |> should equal true
+
+        v
+        |> isMatch "com"
+        |> should equal true
+
+    [<Fact>]
+    let ``Matches Com And Org all or`` () =
+
+        let v =
+            VerbEx()
+            |> or' "com"
+            |> or' "org"
+
+        v
+        |> toString
+        |> should equal "com|org"
 
         v
         |> isMatch "org"

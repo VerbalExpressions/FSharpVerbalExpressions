@@ -1,3 +1,6 @@
+#### 0.4.0 - May 17, 2016
+* or' can be first VE is series of or's
+
 #### 0.3.1 - January 17, 2016
 * internals
 

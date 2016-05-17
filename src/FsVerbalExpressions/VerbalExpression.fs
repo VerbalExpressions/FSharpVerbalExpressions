@@ -471,9 +471,13 @@ module VerbalExpression =
 
     let or' value (verbEx : VerbEx) =
         let v = verbEx.Clone None
-        v.Prefixes <- v.Prefixes + "("
-        v.Source <- v.Source + ")|(" + value
-        v.Suffixes <- ")" + v.Suffixes
+        if v.Source.EndsWith("(") || v.Source.EndsWith(">") then //begin capture
+            v.Source <- v.Source + value
+        else
+            if v.Prefixes.Length > 0 || v.Source.Length > 0 then
+                v.Source <- v.Source + "|" + value
+            else
+                v.Source <- value
         v
 
     let verbExOrVerbEx regexOptions (verbEx : VerbEx) (verbEx2 : VerbEx) =
