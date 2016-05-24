@@ -333,6 +333,7 @@ Target "ReleaseDocs" (fun _ ->
 open Octokit
 
 Target "Release" (fun _ ->
+    printfn "Requested password is GitHub, try token key this time!"    
     let user =
         match getBuildParam "github-user" with
         | s when not (String.IsNullOrWhiteSpace s) -> s
