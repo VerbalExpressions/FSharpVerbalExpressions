@@ -1,0 +1,4 @@
+xunit
+xunit.runner.visualstudio
+FsUnit
+FsUnit.xUnit
