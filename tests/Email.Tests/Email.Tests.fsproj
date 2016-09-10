@@ -44,10 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="CoreTests.fs" />
+    <Compile Include="RFC822.fs" />
     <Compile Include="SimpleEmail.fs" />
     <Compile Include="ModerateEmail.fs" />
     <Compile Include="ComplexEmail.fs" />
+    <Compile Include="OneAmp.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
