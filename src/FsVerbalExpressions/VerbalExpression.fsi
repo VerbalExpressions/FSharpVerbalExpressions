@@ -7,58 +7,6 @@ open System.Text.RegularExpressions
 module VerbalExpression = 
 
     [<Class>]
-    ///Composable wrapping type for System.Text.RegularExpressions.Group.
-    type Group' =
-        new : Group -> Group'
-
-        ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
-        member Captures : unit -> Capture []
-
-        ///The underlying System.Text.RegularExpressions.Group.
-        member Group : Group
-
-        ///The position in the original string where the first character of the captured substring is found.
-        member Index : int
-
-        ///Returns the length of the captured substring.
-        member Length : int
-
-        ///Returns a value indicating whether the match is successful.
-        member Success : bool
-
-        ///Returns the captured substring from the input string.
-        member Value : string
-
-    [<Class>]
-    ///Composable wrapping type for System.Text.RegularExpressions.Match.
-    type Match' =
-        new : Match -> Match'
-
-        ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
-        member Captures : unit -> Capture []
-
-        ///Returns array of groups matched by the regular expression.
-        member Groups : unit -> Group' []
-
-        ///The position in the original string where the first character of the captured substring is found.
-        member Index : int
-
-        ///Returns the length of the captured substring.
-        member Length : int
-
-        ///The underlying System.Text.RegularExpressions.Match.
-        member Match : Match
-
-        ///Returns the expansion of the specified replacement pattern.
-        member Result : replacement : string ->  string
-
-        ///Returns a value indicating whether the match is successful.
-        member Success : bool
-
-        ///Returns the captured substring from the input string.
-        member Value : string
-
-    [<Class>]
     ///Composable immutable wrapping type for System.Text.RegularExpressions.Regex.
     type VerbEx =
         new : unit -> VerbEx
@@ -89,19 +37,19 @@ module VerbalExpression =
         member IsMatch : input : string * startAt : int -> bool
 
         ///Searches the specified input string for the first occurrence of the regular expression.
-        member Match : input : string -> Match
+        member Match : input : string -> FsMatch
 
         ///Searches the specified input string for the first occurrence of the regular expression beginning at the specified starting position.
-        member Match : input : string * startAt : int -> Match
+        member Match : input : string * startAt : int -> FsMatch
 
         ///Searches the specified input string for the first occurrence of the regular expression beginning at the starting position for the length.
-        member Match : input : string * startAt : int * length : int -> Match
+        member Match : input : string * startAt : int * length : int -> FsMatch
 
         ///Searches the specified input string for all occurrences of a regular expression.
-        member Matches : input : string -> Match'[]
+        member Matches : input : string -> FsMatch[]
 
         ///Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
-        member Matches : input : string * startAt : int -> Match'[]
+        member Matches : input : string * startAt : int -> FsMatch[]
 
         ///Gets the time-out interval of the current instance.
         member MatchTimeout : TimeSpan
@@ -143,19 +91,19 @@ module VerbalExpression =
         member Split : input : string * count : int * startAt : int -> array<string>
 
     ///Searches the specified input string for the first occurrence of the VerbEx.
-    val match' : input : string -> verbEx : VerbEx -> Match
+    val firstMatch : input : string -> verbEx : VerbEx -> FsMatch
 
     ///Searches the specified input string for the first occurrence of the VerbEx beginning at the specified starting position.
-    val matchAt : input : string -> startAt : int -> verbEx : VerbEx -> Match
+    val matchAt : input : string -> startAt : int -> verbEx : VerbEx -> FsMatch
 
-    ///Searches the specified input string for the first occurrence of the VerbExbeginning at the starting position for the length.
-    val matchAtFor : input : string -> startAt : int ->  length : int -> verbEx : VerbEx -> Match
+    ///Searches the specified input string for the first occurrence of the VerbEx beginning at the starting position for the length.
+    val matchAtFor : input : string -> startAt : int ->  length : int -> verbEx : VerbEx -> FsMatch
 
     ///Searches the specified input string for all occurrences of a regular expression.
-    val matches : input : string -> verbEx : VerbEx -> Match'[]
+    val matches : input : string -> verbEx : VerbEx -> FsMatch[]
 
-    ///Searches the input string for the first occurrence of a regular expression, beginning at the specified starting position.
-    val matchesAt : input : string -> startAt : int -> verbEx : VerbEx -> Match'[]
+    ///Searches the input string for all occurrence of a regular expression, beginning at the specified starting position.
+    val matchesAt : input : string -> startAt : int -> verbEx : VerbEx -> FsMatch[]
 
     ///In input string replaces all strings that match regular expression pattern with replacement string.
     val replace : input : string -> replacement : string -> verbEx : VerbEx -> string

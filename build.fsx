@@ -49,7 +49,7 @@ let tags = "regularexpressions regularexpression fsharp"
 let solutionFile  = "FsVerbalExpressions.sln"
 
 // Pattern specifying assemblies to be tested using NUnit
-let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
+let testAssembliesDir = "tests/"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
@@ -140,12 +140,13 @@ Target "Build" (fun _ ->
 // Run the unit tests using test runner
 
 Target "RunTests" (fun _ ->
-    !! testAssemblies
-    |> xUnit2 (fun p ->
-                    {p with 
-                        ToolPath = "packages/xunit.runner.console/tools/xunit.console.exe"
-                    } )
-    )
+    !! (testAssembliesDir + "FsRegEx.Tests/bin/Release/*Tests*.dll")
+        ++ (testAssembliesDir + "FsVerbalExpressions.Tests/bin/Release/*Tests*.dll")
+        |> xUnit2 (fun p ->
+                        {p with 
+                            ToolPath = "packages/xunit.runner.console/tools/xunit.console.exe"
+                        } )
+        )
 
 #if MONO
 #else

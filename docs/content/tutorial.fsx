@@ -4,7 +4,7 @@
 #I "../../bin/FsVerbalExpressions"
 
 (**
-Introducing F# Verbal Expressions
+Tutorial: F# Verbal Expressions
 =================================
 
 FsVerbalExpressions is an F# library that allows you to compose regular expressions in natural language using an immutable F# Type called VerbEx. 

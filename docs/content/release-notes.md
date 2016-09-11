@@ -1,3 +1,13 @@
+#### 0.5.0 - September 11, 2016
+* breaking change
+* new module, FsRegEx, of composable regular expressions functions
+* added tests of RegularExpressions email validation
+* renamed Match' type to FsMatch, moved to root namespace
+* renamed Group' type to FsGroup, moved to root namespace
+* renamed match' function in VerbalExpression module firstMatch
+* fixed bugs in reuse of VerbEx Groups() and Captures()
+* return FsMatch where previously Regex Match returned
+
 #### 0.4.0 - May 17, 2016
 * or' can be first VE is series of or's
 

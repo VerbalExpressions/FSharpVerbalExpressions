@@ -7,105 +7,6 @@ open System.Threading
 module VerbalExpression = 
 
     [<Class>]
-    type Group'(group : Group) =
-
-        let mutable _captures : Capture [] option = None
-
-        override __.Equals(yobj) = 
-
-            match yobj with
-
-            | :? Group' as y -> (group = y.Group)
-
-            | _ -> false
-
-        override __.GetHashCode() = group.GetHashCode()
-
-        override __.ToString() = group.ToString()
-
-        member __.Captures() =
-
-            match _captures with
-            | Some x -> x
-            | None ->
-                let a : Capture[] = Array.zeroCreate group.Captures.Count 
-                group.Captures.CopyTo(a, 0)
-                _captures <- Some a
-                a
-
-        member __.Group = group
-
-        member __.Index =
-            group.Index
-
-        member __.Length =
-            group.Length
-
-        member __.Success =
-            group.Success
-
-        member __.Value =
-            group.Value
-
-    [<Class>]
-    type Match'(match' : Match) =
-
-        let mutable _captures : Capture [] option = None
-        let mutable _group's : Group' [] option = None
-
-        override __.Equals(yobj) = 
-
-            match yobj with
-
-            | :? Match' as y -> (match' = y.Match)
-
-            | _ -> false
-
-        override __.GetHashCode() = match'.GetHashCode()
-
-        override __.ToString() = match'.ToString()
-
-        member __.Captures() =
-
-            match _captures with
-            | Some x -> x
-            | None ->
-                let a : Capture[] = Array.zeroCreate match'.Captures.Count 
-                match'.Captures.CopyTo(a, 0)
-                _captures <- Some a
-                a
-
-        member __.Groups() =
-
-            match _group's with
-            | Some x -> x
-            | None ->
-                let gs =
-                    let a : Group[] = Array.zeroCreate match'.Groups.Count 
-                    match'.Groups.CopyTo(a, 0)
-                    a
-                    |> Array.map (fun t -> Group'(t)) 
-                _group's <- Some gs
-                gs
-
-        member __.Index =
-            match'.Index
-
-        member __.Length =
-            match'.Length
-
-        member __.Match = match'
-
-        member __.Result replacement =
-            match'.Result replacement
-
-        member __.Success =
-            match'.Success
-
-        member __.Value =
-            match'.Value
-
-    [<Class>]
     type VerbEx(regularExpression : string, regexOptions : RegexOptions, matchTimeout : TimeSpan) =
 
         let mutable _matchTimeout = matchTimeout
@@ -114,20 +15,11 @@ module VerbalExpression =
         let mutable _source = regularExpression
         let mutable _suffixes = ""
         let mutable _regex : Regex option = None
-        let mutable _matches' : Match' [] option = None
-
-        let arrayFromMatches (c : MatchCollection) =
-            let a : Match[] = Array.zeroCreate c.Count
-            c.CopyTo(a, 0)
-            a
-            |> Array.map (fun t -> new Match'(t))
 
         override __.Equals(yobj) = 
 
             match yobj with
-
             | :? VerbEx as y -> (__.GetHashCode() = y.GetHashCode())
-
             | _ -> false
 
         override __.GetHashCode() = 
@@ -199,27 +91,24 @@ module VerbalExpression =
 
         member __.Match input =
             __.Regex.Match input
+            |> FsMatch
 
         member __.Match (input, startAt) =
             __.Regex.Match(input, startAt)
+            |> FsMatch
 
         member __.Match (input, startAt, length) =
             __.Regex.Match(input, startAt, length)
+            |> FsMatch
 
         member __.Matches input =
 
-            match _matches' with
-            | Some x -> x
-            | None ->
-                let ms =
-                    __.Regex.Matches input
-                    |> arrayFromMatches
-                _matches' <- Some ms
-                ms
+            __.Regex.Matches input
+            |> Common.arrayFromMatches
 
         member __.Matches (input, startAt) =
             __.Regex.Matches(input, startAt)
-            |> arrayFromMatches
+            |> Common.arrayFromMatches
 
         member __.MatchTimeout =
             __.Regex.MatchTimeout
@@ -271,7 +160,7 @@ module VerbalExpression =
         member  __.Split (input, count, startAt) =
             __.Regex.Split(input, count, startAt)
 
-    let match' input (verbEx : VerbEx) = 
+    let firstMatch input (verbEx : VerbEx) = 
         verbEx.Match input
 
     let matchAt input startAt (verbEx : VerbEx) = 

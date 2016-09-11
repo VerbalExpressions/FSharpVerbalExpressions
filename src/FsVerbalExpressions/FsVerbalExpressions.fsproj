@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UniCode.fs" />
+    <Compile Include="Common.fs" />
+    <Compile Include="FsRegEx.fsi" />
+    <Compile Include="FsRegEx.fs" />
     <Compile Include="VerbalExpression.fsi" />
     <Compile Include="VerbalExpression.fs" />
     <Compile Include="CommonVerbEx.fsi" />
@@ -55,6 +58,8 @@
     <None Include="Scripts\load-references-debug.fsx" />
     <None Include="Scripts\load-project-debug.fsx" />
     <None Include="Scripts\Script1.fsx" />
+    <None Include="Scripts\load-references-release.fsx" />
+    <None Include="Scripts\load-project-release.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

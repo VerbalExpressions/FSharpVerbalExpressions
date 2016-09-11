@@ -7,7 +7,7 @@
 FsVerbalExpressions
 ======================
 
-This library wraps the .NET RegEx object in a composable F# type and allows you to write regular expressions in natural language. Lazy evaluation ensures composition imposes no performance penalty.
+The `FsVerbalExpressions` library provides composable F# functionality for nearly all the capabilites of the .NET `Regex` class, supporting uniform pipe forward `|>` composability and all `Regex` features except timeouts. Optionally you can compose F# verbal expressions in natural language. Lazy evaluation ensures natural language composition imposes no performance penalty.
 
 <div class="row">
   <div class="span1"></div>
@@ -23,21 +23,62 @@ This library wraps the .NET RegEx object in a composable F# type and allows you 
 Introduction
 ------------
 
-The FsVerbalExpressions library brings a composable regular expression experience to F#.
+The `FsVerbalExpressions` library brings a composable regular expression experience to F#.
 
- * `VerbEx` - A composable F# wrapper type over `System.Text.RegularExpressions.Regex`.
+ * `FsRegEx` - Module contains composable functions representing all available `Regex` functionality (except timeouts) with the target input string uniformly the last parameter to better support pipe forward `|>` composition and partial application. 
+ 
+ * Collections returned as F# arrays rather than `Regex` special collections for better composability (but sacrificing lazy match evaluation and timeout support).
 
- * Basic functional operations on VerbEx (exists, fold, foldBack, iter, and map), among other composable functions.
+ * Short-cut functions like `capture` on group name make common multi-step processes a single function.
 
- * `Match'` - A composable F# wrapper type over `System.Text.RegularExpressions.Match`.
+ * `FsMatch` - A composable F# wrapper type over `System.Text.RegularExpressions.Match`.
 
- * `Group'` - A composable F# wrapper type over `System.Text.RegularExpressions.Group`.
+ * `FsGroup` - A composable F# wrapper type over `System.Text.RegularExpressions.Group`.
 
-The RegEx speciall collections are returned as arrays. This does lose the advantange of lazy match evaluation the special collections provide. 
-A future release may include matches returned as a lazy list. The underlying object can always be returned from the wrapper
+ * `VerbEx` - A composable F# wrapper type over `System.Text.RegularExpressions.Regex` for natural language regular expression composition.
 
+ * Basic functional operations on `VerbEx` (`exists`, `fold`, `foldBack`, `iter`, and `map`), among other composable functions.
+
+* `VerbEx` speciall collections are returned as arrays. This does lose the advantange of lazy match evaluation the special collections provide. 
+The underlying object can always be returned from the wrapper. A future release may include matches returned as a lazy list.
 *)
+
+(*** hide ***) 
 #r "FsVerbalExpressions.dll"
+
+(**
+Better F# Composition
+------------------------------------
+*)
+open FsVerbalExpressions.FsRegEx
+
+let carText = "One car red car blue car"
+let carRegExp = @"(\w+)\s+(car)"
+
+matches carRegExp carText
+|> Array.map (fun m -> m.Value)
+|> Array.iter(fun x -> printfn "%s" x)
+
+// One car
+// red car
+// blue car
+
+(**
+Short-cut common procedures to a single function
+------------------------------------------------
+*)
+let groupNumberRegExp = @"COD(?<GroupNumber>[0-9]{3})END"
+let groupNumberName = "GroupNumber"
+
+capture groupNumberRegExp groupNumberName "COD123END"
+|> printfn "%s"
+
+// 123
+
+(**
+Natural Language Regular Expressions
+------------------------------------
+*)
 open FsVerbalExpressions
 open System.Text.RegularExpressions
 open VerbalExpression
@@ -134,9 +175,9 @@ Documentation
 
 FsVerbalExpressions comes with comprehensive API documentation and a tutorial. 
 
- * [Tutorial](tutorial.html) contains further explanation of FsVerbalExpressions and many more usage examples.
-
  * [API Reference](reference/index.html) contains documentation for all types, modules, and functions in the library. 
+
+ * [F# Verbal Expressions Tutorial](tutorial.html) contains further explanation of `FsVerbalExpressions` natural language syntax and many more usage examples.
 
  * For enhanced debugging and API documentation experience, FsVerbalExpressions implements [SourceLink](http://ctaggart.github.io/SourceLink/ "SourceLink")
 
