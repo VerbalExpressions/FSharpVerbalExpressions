@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>FsGroup - FSharpVerbalExpressions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Jack Fox"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/FSharpVerbalExpressions/content/style.css" />
+    <script type="text/javascript" src="/FSharpVerbalExpressions/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/FSharpVerbalExpressions/index.html">FSharpVerbalExpressions</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>FsGroup</h1>
+<p>
+  <span>Namespace: FsVerbalExpressions</span><br />
+</p>
+<div class="xmldoc">
+<p>Composable wrapping type for System.Text.RegularExpressions.Group.</p>
+
+</div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '135', 135)" onmouseover="showTip(event, '135', 135)">
+            new(group)
+          </code>
+          <div class="tip" id="135">
+            <strong>Signature:</strong> group:Group -&gt; FsGroup<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L7-7" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
+            Captures()
+          </code>
+          <div class="tip" id="136">
+            <strong>Signature:</strong> unit -&gt; Capture []<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L22-22" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option).</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '137', 137)" onmouseover="showTip(event, '137', 137)">
+            Group
+          </code>
+          <div class="tip" id="137">
+            <strong>Signature:</strong> Group<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L33-33" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The underlying System.Text.RegularExpressions.Group.</p>
+
+
+              <p>CompiledName: <code>get_Group</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '138', 138)" onmouseover="showTip(event, '138', 138)">
+            Index
+          </code>
+          <div class="tip" id="138">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L36-36" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The position in the original string where the first character of the captured substring is found.</p>
+
+
+              <p>CompiledName: <code>get_Index</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
+            Length
+          </code>
+          <div class="tip" id="139">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L40-40" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns the length of the captured substring.</p>
+
+
+              <p>CompiledName: <code>get_Length</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '140', 140)" onmouseover="showTip(event, '140', 140)">
+            Success
+          </code>
+          <div class="tip" id="140">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L44-44" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns a value indicating whether the match is successful.</p>
+
+
+              <p>CompiledName: <code>get_Success</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '141', 141)" onmouseover="showTip(event, '141', 141)">
+            Value
+          </code>
+          <div class="tip" id="141">
+            <strong>Signature:</strong> string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions/tree/master/src/FsVerbalExpressions/Common.fs#L48-48" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns the captured substring from the input string.</p>
+
+
+              <p>CompiledName: <code>get_Value</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/FSharpVerbalExpressions/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">FSharpVerbalExpressions</li>
+            <li><a href="/FSharpVerbalExpressions/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/FsVerbalExpressions">Get Library via NuGet</a></li>
+            <li><a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions">Source Code on GitHub</a></li>
+            <li><a href="/FSharpVerbalExpressions/license.html">License</a></li>
+            <li><a href="/FSharpVerbalExpressions/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/FSharpVerbalExpressions/tutorial.html">F# Verbal Expressions Tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/FSharpVerbalExpressions/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/VerbalExpressions/FSharpVerbalExpressions"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>
