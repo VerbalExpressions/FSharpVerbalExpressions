@@ -3,22 +3,16 @@
 
 # FsVerbalExpressions
 
-This library wraps the .NET RegEx object in a composable F# type and allows you to write regular expressions in natural language. Lazy evaluation ensures composition imposes no performance penalty.
+The `FsVerbalExpressions` library provides composable F# functionality for nearly all the capabilites of the .NET `Regex` class, supporting uniform pipe forward `|>` composability and all `Regex` features except timeouts. Optionally you can compose F# verbal expressions in natural language. Lazy evaluation ensures natural language composition imposes no performance penalty.
+
+The `FsRegEx` module contains composable functions representing all available `Regex` functionality (except timeouts) with the target input string uniformly the last parameter to better support pipe forward `|>` composition and partial application. 
 
 - Documentation: [FsVerbalExpressions](http://verbalexpressions.github.io/FSharpVerbalExpressions/)
 - Nuget: [FsVerbalExpressions](https://www.nuget.org/packages/FsVerbalExpressions "FsVerbalExpressions")
 
 For enhanced debugging and API documentation experience, FsVerbalExpressions proudly implements [SourceLink](http://ctaggart.github.io/SourceLink/ "SourceLink")
 
-## Future Directions
-
-Expanding and enhancing the Verbal Expression language for F# is not currently a major focus, unless users request some specific use cases.
-
-Enhancing the regular expression composition experience is currently the major focus. See:
-- [Functions for static Regex methods](https://github.com/VerbalExpressions/FSharpVerbalExpressions/issues/2 "Functions for static Regex methods")
-- [MatchCollection, CaptureCollection, GroupCollection natively as arrays](https://github.com/VerbalExpressions/FSharpVerbalExpressions/issues/3 "MatchCollection, CaptureCollection, GroupCollection natively as arrays")
-
-Pull requests welcome so long as 
+## Pull requests welcome so long as 
 
 - they include excellent unit test coverage 
 - they include correct intellisense documentation
