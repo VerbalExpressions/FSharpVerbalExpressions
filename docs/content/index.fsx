@@ -52,10 +52,10 @@ Better F# Composition
 *)
 open FsVerbalExpressions.FsRegEx
 
-let carText = "One car red car blue car"
 let carRegExp = @"(\w+)\s+(car)"
 
-matches carRegExp carText
+sprintf "%s %s %s" "One car" "red car" "blue car"
+|> matches carRegExp
 |> Array.map (fun m -> m.Value)
 |> Array.iter(fun x -> printfn "%s" x)
 
@@ -70,7 +70,8 @@ Short-cut common procedures to a single function
 let groupNumberRegExp = @"COD(?<GroupNumber>[0-9]{3})END"
 let groupNumberName = "GroupNumber"
 
-capture groupNumberRegExp groupNumberName "COD123END"
+sprintf "%s" "COD123END"
+|> capture groupNumberRegExp groupNumberName
 |> printfn "%s"
 
 // 123
