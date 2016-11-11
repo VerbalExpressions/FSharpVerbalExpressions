@@ -5,8 +5,8 @@ nuget FAKE
 nuget FsUnit 
 nuget FsUnit.xUnit 
 nuget SourceLink.Fake
-nuget xunit 1.9.2 framework: >= net45
+nuget xunit
 nuget xunit.runner.console
-nuget xunit.runner.visualstudio 2.1.0-beta2-build1055 framework: >= net45
+nuget xunit.runner.visualstudio version_in_path: true
 
 github fsharp/FAKE modules/Octokit/Octokit.fsx
