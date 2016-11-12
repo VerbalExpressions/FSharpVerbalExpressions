@@ -68,14 +68,21 @@ module VerbalExpression =
             v
 
         member __.GroupNameFromNumber n =
-            __.Regex.GroupNameFromNumber n
+            let name =
+                __.Regex.GroupNameFromNumber n
+
+            if String.IsNullOrEmpty name then None
+            else Some name
 
         member __.GroupNames() =
             
             __.Regex.GetGroupNames()
 
         member __.GroupNumberFromName groupName =
-            __.Regex.GroupNumberFromName groupName
+            let n =
+                __.Regex.GroupNumberFromName groupName
+            if n = -1 then None
+            else Some n
 
         member __.GroupNumbers() =
             
@@ -90,25 +97,22 @@ module VerbalExpression =
             __.Regex.IsMatch(input, startAt)
 
         member __.Match input =
-            __.Regex.Match input
-            |> FsMatch
+            FsMatch (__.Regex, __.Regex.Match input)
 
         member __.Match (input, startAt) =
-            __.Regex.Match(input, startAt)
-            |> FsMatch
+            FsMatch (__.Regex, __.Regex.Match(input, startAt))
 
         member __.Match (input, startAt, length) =
-            __.Regex.Match(input, startAt, length)
-            |> FsMatch
+            FsMatch (__.Regex, __.Regex.Match(input, startAt, length))
 
         member __.Matches input =
 
-            __.Regex.Matches input
-            |> Common.arrayFromMatches
+            (__.Regex, __.Regex.Matches input)
+            ||> Common.arrayFromMatches
 
         member __.Matches (input, startAt) =
-            __.Regex.Matches(input, startAt)
-            |> Common.arrayFromMatches
+            (__.Regex, __.Regex.Matches(input, startAt))
+            ||> Common.arrayFromMatches
 
         member __.MatchTimeout =
             __.Regex.MatchTimeout
@@ -435,7 +439,7 @@ module VerbalExpression =
         |> sprintf "\P{%s}" 
         |> internalAdd verbEx
 
-    let iter (f : (VerbEx -> unit)) verbEx = f verbEx
+    let iter (f : (VerbEx -> unit)) (verbEx : VerbEx)  : unit = f verbEx
 
     let map (f : (VerbEx -> VerbEx)) verbEx = f verbEx
 

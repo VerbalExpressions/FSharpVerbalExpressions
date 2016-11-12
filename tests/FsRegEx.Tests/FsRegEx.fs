@@ -144,3 +144,19 @@ module FsRegEx =
 
         isMatchAt @"[a-zA-Z0-9]\d{2}[a-zA-Z0-9](-\d{3}){2}[A-Za-z0-9]$" start partNumber
         |> should equal true
+
+    [<Fact>]
+    let ``fsGroupName`` () =
+        
+        let pattern' = @"\b(?<FirstWord>\w+)\s?((\w+)\s)*(?<LastWord>\w+)?(?<Punctuation>\p{Po})"
+        let input' = "The cow jumped over the moon."
+
+        let m' = FsRegEx.firstMatch pattern' input'
+
+        let names =
+            m'.Groups()
+            |> Array.map (fun x -> x.Name)
+            
+        let expected = [|"0"; "1"; "2"; "FirstWord"; "LastWord"; "Punctuation"|]
+
+        names |> should equal expected

@@ -19,13 +19,13 @@ module VerbalExpression =
         member Capture : input : string -> string -> string
 
         ///Gets the group name that corresponds to the specified group number.
-        member GroupNameFromNumber : n : int -> string
+        member GroupNameFromNumber : n : int -> string option
 
         ///Returns an array of capturing group names for the regular expression.
         member GroupNames : unit -> array<string>
 
         ///Returns the group number that corresponds to the specified group name.
-        member GroupNumberFromName : groupName : string -> int
+        member GroupNumberFromName : groupName : string -> int option
 
         ///Returns an array of capturing group numbers that correspond to group names in an array.
         member GroupNumbers : unit -> array<int>

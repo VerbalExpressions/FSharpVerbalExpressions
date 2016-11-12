@@ -4,7 +4,7 @@ open System.Text.RegularExpressions
 
 [<Class>]
 ///Composable wrapping type for System.Text.RegularExpressions.Group.
-type FsGroup(group : Group) =
+type FsGroup(name : string, group : Group) =
 
     let mutable _captures : Capture [] option = None
 
@@ -40,6 +40,9 @@ type FsGroup(group : Group) =
     member __.Length =
         group.Length
 
+    ///Returns name of capture group.
+    member ___.Name = name
+
     ///Returns a value indicating whether the match is successful.
     member __.Success =
         group.Success
@@ -50,7 +53,7 @@ type FsGroup(group : Group) =
 
 [<Class>]
 ///Composable wrapping type for System.Text.RegularExpressions.Match.
-type FsMatch(fsMatch : Match) =
+type FsMatch(regex : Regex, fsMatch : Match) =
 
     override __.Equals(yobj) = 
 
@@ -75,7 +78,7 @@ type FsMatch(fsMatch : Match) =
         let a : Group[] = Array.zeroCreate fsMatch.Groups.Count 
         fsMatch.Groups.CopyTo(a, 0)
         a
-        |> Array.map (fun t -> FsGroup(t)) 
+        |> Array.mapi (fun i t -> FsGroup(regex.GroupNameFromNumber(i), t)) 
 
     ///The position in the original string where the first character of the captured substring is found.
     member __.Index =
@@ -102,9 +105,9 @@ type FsMatch(fsMatch : Match) =
 
 module internal Common =
 
-    let arrayFromMatches (c : MatchCollection) =
+    let arrayFromMatches regex (c : MatchCollection) =
         let a : Match[] = Array.zeroCreate c.Count
         c.CopyTo(a, 0)
         a
-        |> Array.map (fun t -> new FsMatch(t))
+        |> Array.map (fun t -> new FsMatch(regex, t))
 
