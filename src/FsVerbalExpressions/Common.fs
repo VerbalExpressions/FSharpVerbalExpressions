@@ -4,9 +4,9 @@ open System.Text.RegularExpressions
 
 [<Class>]
 ///Composable wrapping type for System.Text.RegularExpressions.Group.
-type FsGroup(name : string, group : Group) =
+type FsGroup internal (name : string, group : Group) =
 
-    let mutable _captures : Capture [] option = None
+    let mutable captures : Capture [] option = None
 
     override __.Equals(yobj) = 
 
@@ -21,12 +21,12 @@ type FsGroup(name : string, group : Group) =
     ///Returns array of captures matched by the capturing group, in innermost-leftmost-first order (or innermost-rightmost-first order if the regular expression is modified with the RegexOptions.RightToLeft option). 
     member __.Captures() =
 
-        match _captures with
+        match captures with
         | Some x -> x
         | None ->
             let a : Capture[] = Array.zeroCreate group.Captures.Count 
             group.Captures.CopyTo(a, 0)
-            _captures <- Some a
+            captures <- Some a
             a
 
     ///The underlying System.Text.RegularExpressions.Group.
@@ -53,7 +53,7 @@ type FsGroup(name : string, group : Group) =
 
 [<Class>]
 ///Composable wrapping type for System.Text.RegularExpressions.Match.
-type FsMatch(regex : Regex, fsMatch : Match) =
+type FsMatch internal (regex : Regex, fsMatch : Match) =
 
     override __.Equals(yobj) = 
 
