@@ -1,3 +1,9 @@
+#### 0.6.0 - November 13, 2016
+* breaking change
+* GroupNameFromNumber and GroupNumberFromName are option types
+* add name to FsGroup
+* hide FsGroup and FsMatch constructors
+
 #### 0.5.0 - September 11, 2016
 * breaking change
 * new module, FsRegEx, of composable regular expressions functions
