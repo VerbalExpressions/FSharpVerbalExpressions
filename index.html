@@ -321,7 +321,7 @@ redistribution for both commercial and non-commercial purposes. For more informa
 <div class="tip" id="fs18">namespace System.Text.RegularExpressions</div>
 <div class="tip" id="fs19">module VerbalExpression<br /><br />from FsVerbalExpressions</div>
 <div class="tip" id="fs20">val allXs : VerbEx<br /><br />Full name: Index.allXs</div>
-<div class="tip" id="fs21">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
+<div class="tip" id="fs21">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string option<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int option<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
 <div class="tip" id="fs22">val verbEx : VerbEx<br /><br />Full name: Index.verbEx</div>
 <div class="tip" id="fs23">module CommonVerbEx<br /><br />from FsVerbalExpressions</div>
 <div class="tip" id="fs24">val Email : VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Email</div>
@@ -365,8 +365,15 @@ redistribution for both commercial and non-commercial purposes. For more informa
             <li class="nav-header">Getting started</li>
             <li><a href="/FSharpVerbalExpressions/tutorial.html">F# Verbal Expressions Tutorial</a></li>
 
+            <li class="nav-header">Examples</li>
+            <li><a href="/FSharpVerbalExpressions/matching.html">Matching</a></li>
+            <li><a href="/FSharpVerbalExpressions/group.html">Match Groups</a></li>
+            <li><a href="/FSharpVerbalExpressions/replacesplit.html">Replace and Split</a></li>
+            <li><a href="/FSharpVerbalExpressions/capture.html">Capture</a></li>
+
             <li class="nav-header">Documentation</li>
             <li><a href="/FSharpVerbalExpressions/reference/index.html">API Reference</a></li>
+
           </ul>
         </div>
       </div>
