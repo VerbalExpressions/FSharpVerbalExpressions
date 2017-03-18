@@ -34,8 +34,25 @@
         <div class="span9" id="main">
           
 <h1><a name="Tutorial-F-Verbal-Expressions" class="anchor" href="#Tutorial-F-Verbal-Expressions">Tutorial: F# Verbal Expressions</a></h1>
-<p>FsVerbalExpressions is an F# library that allows you to compose regular expressions in natural language using an immutable F# Type called VerbEx.</p>
-<p>In turn you can compose values of the VerbEx type with the |&gt; operator, including creating a new regular expression by logical or on 2 existing VerbExs.</p>
+<p>The <code>VerbalExpressions</code> module includes the <code>VerbEx</code> type which wraps the familiar .NET <code>RegEx</code> in a type with useful functional members.
+Multiple constructors start with a regular expression in the constructor.</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">verbEx</span> <span class="o">=</span> <span class="k">new</span> <span class="i">VerbEx</span>(<span class="s">@&quot;[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}&quot;</span>)
+</code></pre></td>
+</tr>
+</table>
+<p>Beyond this the module is an experimental DSL that allows you to compose regular expressions in natural language
+using the immutable <code>VerbEx</code> type. The remainder of this tutorial is concerned with the experimental DSL which is, frankly, not that practical.</p>
+<p>For practical examples of using the core <code>FsRegEx</code> module for composability, see the following examples:</p>
+<ul>
+<li><p><a href="matching.html">Matching</a></p></li>
+<li><p><a href="group.html">Matching Groups</a></p></li>
+<li><p><a href="replacesplit.html">Replace and Split</a></p></li>
+<li><p><a href="capture.html">Capture</a></p></li>
+</ul>
+<h2><a name="Verbal-Expressions-DSL" class="anchor" href="#Verbal-Expressions-DSL">Verbal Expressions DSL</a></h2>
+<p>You can compose values of the VerbEx type with the |&gt; operator, including creating a new regular expression by logical or on 2 existing VerbExs.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -59,23 +76,23 @@
 <span class="l">21: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="prep">#r</span> <span class="s">&quot;FsVerbalExpressions.dll&quot;</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">FsVerbalExpressions</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Text</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">RegularExpressions</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">FsVerbalExpressions</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">Text</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="i">RegularExpressions</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="i">v</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="t">CommonVerbEx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="i">Email</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="f">verbExOrVerbEx</span> <span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="t">RegexOptions</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 11)" onmouseover="showTip(event, 'fs11', 11)" class="i">None</span> <span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="t">CommonVerbEx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 13)" onmouseover="showTip(event, 'fs12', 13)" class="i">Url</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="i">v</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="t">CommonVerbEx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="i">Email</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="f">verbExOrVerbEx</span> <span onmouseout="hideTip(event, 'fs11', 11)" onmouseover="showTip(event, 'fs11', 11)" class="t">RegexOptions</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 12)" onmouseover="showTip(event, 'fs12', 12)" class="i">None</span> <span onmouseout="hideTip(event, 'fs7', 13)" onmouseover="showTip(event, 'fs7', 13)" class="t">CommonVerbEx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 14)" onmouseover="showTip(event, 'fs13', 14)" class="i">Url</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs13', 14)" onmouseover="showTip(event, 'fs13', 14)" class="i">foundEmail</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs5', 15)" onmouseover="showTip(event, 'fs5', 15)" class="i">v</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 16)" onmouseover="showTip(event, 'fs8', 16)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs14', 17)" onmouseover="showTip(event, 'fs14', 17)" class="f">isMatch</span> <span class="s">&quot;test@github.com&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs14', 15)" onmouseover="showTip(event, 'fs14', 15)" class="i">foundEmail</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs6', 16)" onmouseover="showTip(event, 'fs6', 16)" class="i">v</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 17)" onmouseover="showTip(event, 'fs9', 17)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 18)" onmouseover="showTip(event, 'fs15', 18)" class="f">isMatch</span> <span class="s">&quot;test@github.com&quot;</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs15', 18)" onmouseover="showTip(event, 'fs15', 18)" class="i">foundUrl</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs5', 19)" onmouseover="showTip(event, 'fs5', 19)" class="i">v</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 20)" onmouseover="showTip(event, 'fs8', 20)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs14', 21)" onmouseover="showTip(event, 'fs14', 21)" class="f">isMatch</span> <span class="s">&quot;http://www.google.com&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs16', 19)" onmouseover="showTip(event, 'fs16', 19)" class="i">foundUrl</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs6', 20)" onmouseover="showTip(event, 'fs6', 20)" class="i">v</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs9', 21)" onmouseover="showTip(event, 'fs9', 21)" class="t">VerbalExpression</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 22)" onmouseover="showTip(event, 'fs15', 22)" class="f">isMatch</span> <span class="s">&quot;http://www.google.com&quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 22)" onmouseover="showTip(event, 'fs16', 22)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs13', 23)" onmouseover="showTip(event, 'fs13', 23)" class="i">foundEmail</span>
-<span onmouseout="hideTip(event, 'fs16', 24)" onmouseover="showTip(event, 'fs16', 24)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs15', 25)" onmouseover="showTip(event, 'fs15', 25)" class="i">foundUrl</span>
+<span onmouseout="hideTip(event, 'fs17', 23)" onmouseover="showTip(event, 'fs17', 23)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs14', 24)" onmouseover="showTip(event, 'fs14', 24)" class="i">foundEmail</span>
+<span onmouseout="hideTip(event, 'fs17', 25)" onmouseover="showTip(event, 'fs17', 25)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs16', 26)" onmouseover="showTip(event, 'fs16', 26)" class="i">foundUrl</span>
 
 <span class="c">// true</span>
 <span class="c">// true</span>
@@ -99,17 +116,17 @@
 <span class="l">12: </span>
 <span class="l">13: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs8', 26)" onmouseover="showTip(event, 'fs8', 26)" class="i">VerbalExpression</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs9', 27)" onmouseover="showTip(event, 'fs9', 27)" class="i">VerbalExpression</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs17', 27)" onmouseover="showTip(event, 'fs17', 27)" class="i">foundFromGithub</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 28)" onmouseover="showTip(event, 'fs18', 28)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs19', 29)" onmouseover="showTip(event, 'fs19', 29)" class="f">startOfLine</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs20', 30)" onmouseover="showTip(event, 'fs20', 30)" class="f">something</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 31)" onmouseover="showTip(event, 'fs21', 31)" class="f">then&#39;</span> <span class="s">&quot;github.com&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs22', 32)" onmouseover="showTip(event, 'fs22', 32)" class="f">endOfLine</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 33)" onmouseover="showTip(event, 'fs23', 33)" class="f">isMatch</span> <span class="s">&quot;test@github.com&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs18', 28)" onmouseover="showTip(event, 'fs18', 28)" class="i">foundFromGithub</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs19', 29)" onmouseover="showTip(event, 'fs19', 29)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs20', 30)" onmouseover="showTip(event, 'fs20', 30)" class="f">startOfLine</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 31)" onmouseover="showTip(event, 'fs21', 31)" class="f">something</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs22', 32)" onmouseover="showTip(event, 'fs22', 32)" class="f">then&#39;</span> <span class="s">&quot;github.com&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 33)" onmouseover="showTip(event, 'fs23', 33)" class="f">endOfLine</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs24', 34)" onmouseover="showTip(event, 'fs24', 34)" class="f">isMatch</span> <span class="s">&quot;test@github.com&quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 34)" onmouseover="showTip(event, 'fs16', 34)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs17', 35)" onmouseover="showTip(event, 'fs17', 35)" class="i">foundFromGithub</span>
+<span onmouseout="hideTip(event, 'fs17', 35)" onmouseover="showTip(event, 'fs17', 35)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs18', 36)" onmouseover="showTip(event, 'fs18', 36)" class="i">foundFromGithub</span>
 
 <span class="c">// true</span>
 </code></pre></td>
@@ -128,15 +145,15 @@
 <span class="l">10: </span>
 <span class="l">11: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs24', 36)" onmouseover="showTip(event, 'fs24', 36)" class="i">foundSomethingSpecial</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 37)" onmouseover="showTip(event, 'fs18', 37)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs19', 38)" onmouseover="showTip(event, 'fs19', 38)" class="f">startOfLine</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs20', 39)" onmouseover="showTip(event, 'fs20', 39)" class="f">something</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 40)" onmouseover="showTip(event, 'fs21', 40)" class="f">then&#39;</span> <span class="s">&quot;*+?&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs25', 41)" onmouseover="showTip(event, 'fs25', 41)" class="f">anything</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 42)" onmouseover="showTip(event, 'fs23', 42)" class="f">isMatch</span> <span class="s">&quot;blah blah blah*+?yackety yack&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs25', 37)" onmouseover="showTip(event, 'fs25', 37)" class="i">foundSomethingSpecial</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs19', 38)" onmouseover="showTip(event, 'fs19', 38)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs20', 39)" onmouseover="showTip(event, 'fs20', 39)" class="f">startOfLine</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 40)" onmouseover="showTip(event, 'fs21', 40)" class="f">something</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs22', 41)" onmouseover="showTip(event, 'fs22', 41)" class="f">then&#39;</span> <span class="s">&quot;*+?&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs26', 42)" onmouseover="showTip(event, 'fs26', 42)" class="f">anything</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs24', 43)" onmouseover="showTip(event, 'fs24', 43)" class="f">isMatch</span> <span class="s">&quot;blah blah blah*+?yackety yack&quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 43)" onmouseover="showTip(event, 'fs16', 43)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs24', 44)" onmouseover="showTip(event, 'fs24', 44)" class="i">foundSomethingSpecial</span>
+<span onmouseout="hideTip(event, 'fs17', 44)" onmouseover="showTip(event, 'fs17', 44)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs25', 45)" onmouseover="showTip(event, 'fs25', 45)" class="i">foundSomethingSpecial</span>
 
 <span class="c">// true</span>
 </code></pre></td>
@@ -153,22 +170,15 @@
 <span class="l">8: </span>
 <span class="l">9: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs26', 45)" onmouseover="showTip(event, 'fs26', 45)" class="i">foundSpecialInMultiline</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 46)" onmouseover="showTip(event, 'fs18', 46)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 47)" onmouseover="showTip(event, 'fs27', 47)" class="f">add</span> <span class="s">@&quot;phrase1\*\+\?&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs25', 48)" onmouseover="showTip(event, 'fs25', 48)" class="f">anything</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 49)" onmouseover="showTip(event, 'fs23', 49)" class="f">isMatch</span> <span class="s">@&quot;phrase1*+?RestOfLine\n&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs27', 46)" onmouseover="showTip(event, 'fs27', 46)" class="i">foundSpecialInMultiline</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs19', 47)" onmouseover="showTip(event, 'fs19', 47)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs28', 48)" onmouseover="showTip(event, 'fs28', 48)" class="f">add</span> <span class="s">@&quot;phrase1\*\+\?&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs26', 49)" onmouseover="showTip(event, 'fs26', 49)" class="f">anything</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs24', 50)" onmouseover="showTip(event, 'fs24', 50)" class="f">isMatch</span> <span class="s">@&quot;phrase1*+?RestOfLine\n&quot;</span>
     
-<span onmouseout="hideTip(event, 'fs16', 50)" onmouseover="showTip(event, 'fs16', 50)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs26', 51)" onmouseover="showTip(event, 'fs26', 51)" class="i">foundSpecialInMultiline</span>
+<span onmouseout="hideTip(event, 'fs17', 51)" onmouseover="showTip(event, 'fs17', 51)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%b</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs27', 52)" onmouseover="showTip(event, 'fs27', 52)" class="i">foundSpecialInMultiline</span>
 
 <span class="c">// true</span>
-</code></pre></td>
-</tr>
-</table>
-<p>Or you can include a regular expression in the costructor.</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs28', 52)" onmouseover="showTip(event, 'fs28', 52)" class="i">verbEx</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs18', 53)" onmouseover="showTip(event, 'fs18', 53)" class="t">VerbEx</span>(<span class="s">@&quot;[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}&quot;</span>)
 </code></pre></td>
 </tr>
 </table>
@@ -206,36 +216,36 @@
 <span class="l">31: </span>
 <span class="l">32: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs29', 54)" onmouseover="showTip(event, 'fs29', 54)" class="i">n</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 55)" onmouseover="showTip(event, 'fs18', 55)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs30', 56)" onmouseover="showTip(event, 'fs30', 56)" class="f">word</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs31', 57)" onmouseover="showTip(event, 'fs31', 57)" class="f">matches</span> <span class="s">&quot;three words here&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs29', 53)" onmouseover="showTip(event, 'fs29', 53)" class="i">n</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs19', 54)" onmouseover="showTip(event, 'fs19', 54)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs30', 55)" onmouseover="showTip(event, 'fs30', 55)" class="f">word</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs31', 56)" onmouseover="showTip(event, 'fs31', 56)" class="f">matches</span> <span class="s">&quot;three words here&quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 58)" onmouseover="showTip(event, 'fs16', 58)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs29', 59)" onmouseover="showTip(event, 'fs29', 59)" class="i">n</span><span class="o">.</span><span class="i">Count</span>
+<span onmouseout="hideTip(event, 'fs17', 57)" onmouseover="showTip(event, 'fs17', 57)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%i</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs29', 58)" onmouseover="showTip(event, 'fs29', 58)" class="i">n</span><span class="o">.</span><span class="i">Count</span>
 
 <span class="c">// 3</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs32', 60)" onmouseover="showTip(event, 'fs32', 60)" class="i">betterFormat</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs18', 61)" onmouseover="showTip(event, 'fs18', 61)" class="t">VerbEx</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 62)" onmouseover="showTip(event, 'fs27', 62)" class="f">add</span> <span class="s">&quot;\s+&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs33', 63)" onmouseover="showTip(event, 'fs33', 63)" class="f">or&#39;</span> <span class="s">&quot;whitespace&quot;</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs34', 64)" onmouseover="showTip(event, 'fs34', 64)" class="f">replace</span> <span class="s">&quot;This     is   text with   far  too   much   whitespace&quot;</span> <span class="s">&quot; &quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs32', 59)" onmouseover="showTip(event, 'fs32', 59)" class="i">betterFormat</span> <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs19', 60)" onmouseover="showTip(event, 'fs19', 60)" class="t">VerbEx</span>()
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs28', 61)" onmouseover="showTip(event, 'fs28', 61)" class="f">add</span> <span class="s">&quot;\s+&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs33', 62)" onmouseover="showTip(event, 'fs33', 62)" class="f">or&#39;</span> <span class="s">&quot;whitespace&quot;</span>
+    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs34', 63)" onmouseover="showTip(event, 'fs34', 63)" class="f">replace</span> <span class="s">&quot;This     is   text with   far  too   much   whitespace&quot;</span> <span class="s">&quot; &quot;</span>
 
-<span onmouseout="hideTip(event, 'fs16', 65)" onmouseover="showTip(event, 'fs16', 65)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs32', 66)" onmouseover="showTip(event, 'fs32', 66)" class="i">betterFormat</span>
+<span onmouseout="hideTip(event, 'fs17', 64)" onmouseover="showTip(event, 'fs17', 64)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs32', 65)" onmouseover="showTip(event, 'fs32', 65)" class="i">betterFormat</span>
 
 <span class="c">// This is text with far too much  </span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs35', 67)" onmouseover="showTip(event, 'fs35', 67)" class="i">groupName</span> <span class="o">=</span>  <span class="s">&quot;GroupNumber&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs35', 66)" onmouseover="showTip(event, 'fs35', 66)" class="i">groupName</span> <span class="o">=</span>  <span class="s">&quot;GroupNumber&quot;</span>
  
-<span onmouseout="hideTip(event, 'fs18', 68)" onmouseover="showTip(event, 'fs18', 68)" class="t">VerbEx</span>()
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 69)" onmouseover="showTip(event, 'fs27', 69)" class="f">add</span> <span class="s">&quot;COD&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 70)" onmouseover="showTip(event, 'fs36', 70)" class="f">beginCaptureNamed</span> <span onmouseout="hideTip(event, 'fs35', 71)" onmouseover="showTip(event, 'fs35', 71)" class="i">groupName</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs37', 72)" onmouseover="showTip(event, 'fs37', 72)" class="f">any</span> <span class="s">&quot;0-9&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 73)" onmouseover="showTip(event, 'fs38', 73)" class="f">repeatPrevious</span> <span class="n">3</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 74)" onmouseover="showTip(event, 'fs39', 74)" class="f">endCapture</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 75)" onmouseover="showTip(event, 'fs21', 75)" class="f">then&#39;</span> <span class="s">&quot;END&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 76)" onmouseover="showTip(event, 'fs40', 76)" class="f">capture</span> <span class="s">&quot;COD123END&quot;</span> <span onmouseout="hideTip(event, 'fs35', 77)" onmouseover="showTip(event, 'fs35', 77)" class="i">groupName</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 78)" onmouseover="showTip(event, 'fs16', 78)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
+<span onmouseout="hideTip(event, 'fs19', 67)" onmouseover="showTip(event, 'fs19', 67)" class="t">VerbEx</span>()
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs28', 68)" onmouseover="showTip(event, 'fs28', 68)" class="f">add</span> <span class="s">&quot;COD&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 69)" onmouseover="showTip(event, 'fs36', 69)" class="f">beginCaptureNamed</span> <span onmouseout="hideTip(event, 'fs35', 70)" onmouseover="showTip(event, 'fs35', 70)" class="i">groupName</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs37', 71)" onmouseover="showTip(event, 'fs37', 71)" class="f">any</span> <span class="s">&quot;0-9&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 72)" onmouseover="showTip(event, 'fs38', 72)" class="f">repeatPrevious</span> <span class="n">3</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 73)" onmouseover="showTip(event, 'fs39', 73)" class="f">endCapture</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs22', 74)" onmouseover="showTip(event, 'fs22', 74)" class="f">then&#39;</span> <span class="s">&quot;END&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 75)" onmouseover="showTip(event, 'fs40', 75)" class="f">capture</span> <span class="s">&quot;COD123END&quot;</span> <span onmouseout="hideTip(event, 'fs35', 76)" onmouseover="showTip(event, 'fs35', 76)" class="i">groupName</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs17', 77)" onmouseover="showTip(event, 'fs17', 77)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
 
 <span class="c">// 123</span>
 </code></pre></td>
@@ -252,47 +262,47 @@
 <span class="l">8: </span>
 <span class="l">9: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs18', 79)" onmouseover="showTip(event, 'fs18', 79)" class="t">VerbEx</span>()
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 80)" onmouseover="showTip(event, 'fs36', 80)" class="f">beginCaptureNamed</span> <span class="s">&quot;upper&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs41', 81)" onmouseover="showTip(event, 'fs41', 81)" class="f">unicodeCategory</span> <span onmouseout="hideTip(event, 'fs42', 82)" onmouseover="showTip(event, 'fs42', 82)" class="t">UniCodeGeneralCategory</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 83)" onmouseover="showTip(event, 'fs43', 83)" class="p">LetterUppercase</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs27', 84)" onmouseover="showTip(event, 'fs27', 84)" class="f">add</span> <span class="s">&quot;+&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 85)" onmouseover="showTip(event, 'fs39', 85)" class="f">endCapture</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 86)" onmouseover="showTip(event, 'fs40', 86)" class="f">capture</span> <span class="s">&quot;some mixed case WORDS&quot;</span> <span class="s">&quot;upper&quot;</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs16', 87)" onmouseover="showTip(event, 'fs16', 87)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs19', 78)" onmouseover="showTip(event, 'fs19', 78)" class="t">VerbEx</span>()
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs36', 79)" onmouseover="showTip(event, 'fs36', 79)" class="f">beginCaptureNamed</span> <span class="s">&quot;upper&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs41', 80)" onmouseover="showTip(event, 'fs41', 80)" class="f">unicodeCategory</span> <span onmouseout="hideTip(event, 'fs42', 81)" onmouseover="showTip(event, 'fs42', 81)" class="t">UniCodeGeneralCategory</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 82)" onmouseover="showTip(event, 'fs43', 82)" class="p">LetterUppercase</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs28', 83)" onmouseover="showTip(event, 'fs28', 83)" class="f">add</span> <span class="s">&quot;+&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs39', 84)" onmouseover="showTip(event, 'fs39', 84)" class="f">endCapture</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 85)" onmouseover="showTip(event, 'fs40', 85)" class="f">capture</span> <span class="s">&quot;some mixed case WORDS&quot;</span> <span class="s">&quot;upper&quot;</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs17', 86)" onmouseover="showTip(event, 'fs17', 86)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
 
 <span class="c">// WORDS</span>
 </code></pre></td>
 </tr>
 </table>
 
-<div class="tip" id="fs1">namespace FsVerbalExpressions</div>
-<div class="tip" id="fs2">namespace System</div>
-<div class="tip" id="fs3">namespace System.Text</div>
-<div class="tip" id="fs4">namespace System.Text.RegularExpressions</div>
-<div class="tip" id="fs5">val v : VerbalExpression.VerbEx<br /><br />Full name: Tutorial.v</div>
-<div class="tip" id="fs6">module CommonVerbEx<br /><br />from FsVerbalExpressions</div>
-<div class="tip" id="fs7">val Email : VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Email</div>
-<div class="tip" id="fs8">module VerbalExpression<br /><br />from FsVerbalExpressions</div>
-<div class="tip" id="fs9">val verbExOrVerbEx : regexOptions:RegexOptions -&gt; verbEx:VerbalExpression.VerbEx -&gt; verbEx:VerbalExpression.VerbEx -&gt; VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.verbExOrVerbEx</div>
-<div class="tip" id="fs10">type RegexOptions =<br />&#160;&#160;| None = 0<br />&#160;&#160;| IgnoreCase = 1<br />&#160;&#160;| Multiline = 2<br />&#160;&#160;| ExplicitCapture = 4<br />&#160;&#160;| Compiled = 8<br />&#160;&#160;| Singleline = 16<br />&#160;&#160;| IgnorePatternWhitespace = 32<br />&#160;&#160;| RightToLeft = 64<br />&#160;&#160;| ECMAScript = 256<br />&#160;&#160;| CultureInvariant = 512<br /><br />Full name: System.Text.RegularExpressions.RegexOptions</div>
-<div class="tip" id="fs11">field RegexOptions.None = 0</div>
-<div class="tip" id="fs12">val Url : VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Url</div>
-<div class="tip" id="fs13">val foundEmail : bool<br /><br />Full name: Tutorial.foundEmail</div>
-<div class="tip" id="fs14">val isMatch : value:string -&gt; verbEx:VerbalExpression.VerbEx -&gt; bool<br /><br />Full name: FsVerbalExpressions.VerbalExpression.isMatch</div>
-<div class="tip" id="fs15">val foundUrl : bool<br /><br />Full name: Tutorial.foundUrl</div>
-<div class="tip" id="fs16">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
-<div class="tip" id="fs17">val foundFromGithub : bool<br /><br />Full name: Tutorial.foundFromGithub</div>
-<div class="tip" id="fs18">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string option<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int option<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
-<div class="tip" id="fs19">val startOfLine : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.startOfLine</div>
-<div class="tip" id="fs20">val something : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.something</div>
-<div class="tip" id="fs21">val then&#39; : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.then&#39;</div>
-<div class="tip" id="fs22">val endOfLine : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.endOfLine</div>
-<div class="tip" id="fs23">val isMatch : value:string -&gt; verbEx:VerbEx -&gt; bool<br /><br />Full name: FsVerbalExpressions.VerbalExpression.isMatch</div>
-<div class="tip" id="fs24">val foundSomethingSpecial : bool<br /><br />Full name: Tutorial.foundSomethingSpecial</div>
-<div class="tip" id="fs25">val anything : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.anything</div>
-<div class="tip" id="fs26">val foundSpecialInMultiline : bool<br /><br />Full name: Tutorial.foundSpecialInMultiline</div>
-<div class="tip" id="fs27">val add : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.add</div>
-<div class="tip" id="fs28">val verbEx : VerbEx<br /><br />Full name: Tutorial.verbEx</div>
+<div class="tip" id="fs1">val verbEx : obj<br /><br />Full name: Tutorial.verbEx</div>
+<div class="tip" id="fs2">namespace FsVerbalExpressions</div>
+<div class="tip" id="fs3">namespace System</div>
+<div class="tip" id="fs4">namespace System.Text</div>
+<div class="tip" id="fs5">namespace System.Text.RegularExpressions</div>
+<div class="tip" id="fs6">val v : VerbalExpression.VerbEx<br /><br />Full name: Tutorial.v</div>
+<div class="tip" id="fs7">module CommonVerbEx<br /><br />from FsVerbalExpressions</div>
+<div class="tip" id="fs8">val Email : VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Email</div>
+<div class="tip" id="fs9">module VerbalExpression<br /><br />from FsVerbalExpressions</div>
+<div class="tip" id="fs10">val verbExOrVerbEx : regexOptions:RegexOptions -&gt; verbEx:VerbalExpression.VerbEx -&gt; verbEx:VerbalExpression.VerbEx -&gt; VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.verbExOrVerbEx</div>
+<div class="tip" id="fs11">type RegexOptions =<br />&#160;&#160;| None = 0<br />&#160;&#160;| IgnoreCase = 1<br />&#160;&#160;| Multiline = 2<br />&#160;&#160;| ExplicitCapture = 4<br />&#160;&#160;| Compiled = 8<br />&#160;&#160;| Singleline = 16<br />&#160;&#160;| IgnorePatternWhitespace = 32<br />&#160;&#160;| RightToLeft = 64<br />&#160;&#160;| ECMAScript = 256<br />&#160;&#160;| CultureInvariant = 512<br /><br />Full name: System.Text.RegularExpressions.RegexOptions</div>
+<div class="tip" id="fs12">field RegexOptions.None = 0</div>
+<div class="tip" id="fs13">val Url : VerbalExpression.VerbEx<br /><br />Full name: FsVerbalExpressions.CommonVerbEx.Url</div>
+<div class="tip" id="fs14">val foundEmail : bool<br /><br />Full name: Tutorial.foundEmail</div>
+<div class="tip" id="fs15">val isMatch : value:string -&gt; verbEx:VerbalExpression.VerbEx -&gt; bool<br /><br />Full name: FsVerbalExpressions.VerbalExpression.isMatch</div>
+<div class="tip" id="fs16">val foundUrl : bool<br /><br />Full name: Tutorial.foundUrl</div>
+<div class="tip" id="fs17">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs18">val foundFromGithub : bool<br /><br />Full name: Tutorial.foundFromGithub</div>
+<div class="tip" id="fs19">Multiple items<br />type VerbEx =<br />&#160;&#160;new : unit -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string -&gt; VerbEx<br />&#160;&#160;new : regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />&#160;&#160;new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:TimeSpan -&gt; VerbEx<br />&#160;&#160;member Capture : input:string -&gt; string -&gt; string<br />&#160;&#160;member GroupNameFromNumber : n:int -&gt; string option<br />&#160;&#160;member GroupNames : unit -&gt; string array<br />&#160;&#160;member GroupNumberFromName : groupName:string -&gt; int option<br />&#160;&#160;member GroupNumbers : unit -&gt; int array<br />&#160;&#160;...<br /><br />Full name: FsVerbalExpressions.VerbalExpression.VerbEx<br /><br />--------------------<br />new : unit -&gt; VerbEx<br />new : regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions -&gt; VerbEx<br />new : regularExpression:string * regexOptions:RegexOptions * matchTimeout:System.TimeSpan -&gt; VerbEx</div>
+<div class="tip" id="fs20">val startOfLine : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.startOfLine</div>
+<div class="tip" id="fs21">val something : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.something</div>
+<div class="tip" id="fs22">val then&#39; : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.then&#39;</div>
+<div class="tip" id="fs23">val endOfLine : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.endOfLine</div>
+<div class="tip" id="fs24">val isMatch : value:string -&gt; verbEx:VerbEx -&gt; bool<br /><br />Full name: FsVerbalExpressions.VerbalExpression.isMatch</div>
+<div class="tip" id="fs25">val foundSomethingSpecial : bool<br /><br />Full name: Tutorial.foundSomethingSpecial</div>
+<div class="tip" id="fs26">val anything : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.anything</div>
+<div class="tip" id="fs27">val foundSpecialInMultiline : bool<br /><br />Full name: Tutorial.foundSpecialInMultiline</div>
+<div class="tip" id="fs28">val add : value:string -&gt; verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.add</div>
 <div class="tip" id="fs29">val n : FsMatch []<br /><br />Full name: Tutorial.n</div>
 <div class="tip" id="fs30">val word : verbEx:VerbEx -&gt; VerbEx<br /><br />Full name: FsVerbalExpressions.VerbalExpression.word</div>
 <div class="tip" id="fs31">val matches : input:string -&gt; verbEx:VerbEx -&gt; FsMatch []<br /><br />Full name: FsVerbalExpressions.VerbalExpression.matches</div>
