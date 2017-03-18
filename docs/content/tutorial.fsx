@@ -7,9 +7,31 @@
 Tutorial: F# Verbal Expressions
 =================================
 
-FsVerbalExpressions is an F# library that allows you to compose regular expressions in natural language using an immutable F# Type called VerbEx. 
+The `VerbalExpressions` module includes the `VerbEx` type which wraps the familiar .NET `RegEx` in a type with useful functional members. 
+Multiple constructors start with a regular expression in the constructor.
+*)
 
-In turn you can compose values of the VerbEx type with the |> operator, including creating a new regular expression by logical or on 2 existing VerbExs. 
+let verbEx = new VerbEx(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")
+
+(**
+Beyond this the module is an experimental DSL that allows you to compose regular expressions in natural language 
+using the immutable `VerbEx` type. The remainder of this tutorial is concerned with the experimental DSL which is, frankly, not that practical. 
+
+For practical examples of using the core `FsRegEx` module for composability, see the following examples:
+
+* [Matching](matching.html)
+
+* [Matching Groups](group.html)
+
+* [Replace and Split](replacesplit.html)
+
+* [Capture](capture.html)
+
+
+Verbal Expressions DSL
+----------------------
+
+You can compose values of the VerbEx type with the |> operator, including creating a new regular expression by logical or on 2 existing VerbExs. 
 
 *)
 #r "FsVerbalExpressions.dll"
@@ -85,12 +107,6 @@ let foundSpecialInMultiline =
 printfn "%b" foundSpecialInMultiline
 
 // true
-
-(**
-Or you can include a regular expression in the costructor.
-*)
-
-let verbEx = new VerbEx(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")
 
 (**
 VerbExs posses all the power of the .Net RegEx class in a composable form.
