@@ -1,3 +1,6 @@
+#### 0.6.1 - May 16, 2017
+* deprecated in favor of FsRegEx, https://jackfoxy.github.io/FsRegEx/index.html
+
 #### 0.6.0 - November 13, 2016
 * breaking change
 * GroupNameFromNumber and GroupNumberFromName are option types
